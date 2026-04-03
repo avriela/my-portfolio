@@ -75,6 +75,7 @@
       gap: 10px;
       transition: all 0.2s;
       position: relative;
+      text-decoration: none;
     }
 
     .nav-item:hover { color: #f0ece4; background: #242424; }
@@ -125,7 +126,10 @@
       color: #5a5450;
     }
 
-    .nav-accordion-header.open .nav-accordion-arrow { transform: rotate(180deg); }
+    .nav-accordion-header.open .nav-accordion-arrow {
+      transform: rotate(180deg);
+    }
+
     .nav-accordion-body { display: none; background: #161618; }
     .nav-accordion-body.open { display: block; }
 
@@ -143,28 +147,21 @@
       gap: 8px;
       transition: all 0.2s;
       position: relative;
+      text-decoration: none;
     }
 
     .nav-sub-item:hover { color: #f0ece4; }
-    .nav-sub-item.active { color: #e8c97e; }
-
-    .nav-sub-item.active::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: #e8c97e;
-      border-radius: 0 2px 2px 0;
-    }
 
     .main {
       flex: 1;
       overflow-y: auto;
       background: linear-gradient(160deg, #f5f0eb 0%, #ede8e0 100%);
     }
-    display: none;
-      padding: 48px 56px;
-      max-width: 860px;
+
+    .content-block {
+      display: none;
+      padding: 52px 72px;
+      max-width: 900px;
       animation: fadeIn 0.25s ease;
     }
 
@@ -172,27 +169,28 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform:
+        translateY(0); }
     }
 
     .page-title {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 700;
-      color: #2c2825;
+      color: #1e1b18;
       margin-bottom: 6px;
     }
 
     .page-subtitle {
-      font-size: 14px;
-      color: #9a9088;
+      font-size: 15px;
+      color: #8a8078;
       margin-bottom: 36px;
     }
 
     .section-title {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.9px;
       color: #c4a45a;
       margin-bottom: 16px;
       margin-top: 36px;
@@ -203,39 +201,33 @@
     .card {
       background: #ffffff;
       border-radius: 12px;
-      padding: 24px;
+      padding: 24px 28px;
       margin-bottom: 16px;
       box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
       border: 1px solid #ede8e0;
     }
 
     .card-title {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      color: #2c2825;
+      color: #1e1b18;
       margin-bottom: 4px;
     }
 
-    .card-meta {
-      font-size: 12px;
-      color: #b0a898;
-      margin-bottom: 12px;
-    }
-
     .card-text {
-      font-size: 13px;
-      color: #7a7068;
-      line-height: 1.7;
+      font-size: 14px;
+      color: #5a5450;
+      line-height: 1.75;
     }
 
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 
     .tag {
       background: #f5f0eb;
       border: 1px solid #e0d8ce;
-      color: #7a7068;
-      font-size: 11px;
-      padding: 4px 10px;
+      color: #6a6460;
+      font-size: 12px;
+      padding: 4px 12px;
       border-radius: 20px;
     }
 
@@ -253,19 +245,19 @@
     }
 
     .check-list li {
-      font-size: 13px;
-      color: #5a5450;
+      font-size: 14px;
+      color: #4a4440;
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .check-list li::before {
       content: '✦';
       color: #e8c97e;
       font-size: 10px;
-      margin-top: 3px;
+      margin-top: 4px;
       flex-shrink: 0;
     }
 
@@ -273,9 +265,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 8px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
       text-decoration: none;
@@ -289,7 +281,7 @@
     .btn-outline {
       background: transparent;
       border: 1px solid #e0d8ce;
-      color: #7a7068;
+      color: #6a6460;
     }
 
     .btn-outline:hover { border-color: #e8c97e; color: #c4a45a; }
@@ -298,14 +290,14 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid #ede8e0;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #9a9088; width: 140px; flex-shrink: 0; }
-    .info-value { color: #2c2825; }
+    .info-label { color: #9a9088; width: 150px; flex-shrink: 0; }
+    .info-value { color: #1e1b18; }
 
     .divider { height: 1px; background: #ede8e0; margin: 28px 0; }
 
@@ -330,23 +322,46 @@
       flex-shrink: 0;
     }
 
-    .about-intro-name { font-size: 24px; font-weight: 700; color: #2c2825; }
-    .about-intro-role { font-size: 14px; color: #9a9088; margin-top: 4px; }
+    .about-intro-name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1e1b18;
+    }
+
+    .about-intro-role {
+      font-size: 15px;
+      color: #8a8078;
+      margin-top: 4px;
+    }
 
     .work-card {
       background: #ffffff;
       border-radius: 12px;
-      padding: 24px;
+      padding: 24px 28px;
       margin-bottom: 16px;
       box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
       border: 1px solid #ede8e0;
       border-left: 3px solid #e8c97e;
     }
 
-    .work-title { font-size: 15px; font-weight: 600; color: #2c2825; margin-bottom: 2px; }
-    .work-company { font-
-                   size: 13px; color: #c4a45a; margin-bottom: 4px; }
-    .work-period { font-size: 12px; color: #b0a898; margin-bottom: 14px; }
+    .work-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e1b18;
+      margin-bottom: 2px;
+    }
+
+    .work-company {
+      font-size: 14px;
+      color: #c4a45a;
+      margin-bottom: 4px;
+    }
+
+    .work-period {
+      font-size: 12px;
+      color: #b0a898;
+      margin-bottom: 14px;
+    }
 
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -383,9 +398,10 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <button class="nav-sub-item" onclick="showPage('bot-reports')">
+      <a class="nav-sub-item"
+         href="bot-reports.html">
         · Бот отчётов сотрудников
-      </button>
+      </a>
     </div>
 
     <button class="nav-accordion-header" onclick="toggleAccordion(this)">
@@ -393,9 +409,10 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <button class="nav-sub-item" onclick="showPage('webapp-1')">
+      <a class="nav-sub-item"
+         href="webapp-1.html">
         · Проект в разработке
-      </button>
+      </a>
     </div>
 
     <button class="nav-accordion-header" onclick="toggleAccordion(this)">
@@ -403,9 +420,10 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <button class="nav-sub-item" onclick="showPage('site-1')">
+      <a class="nav-sub-item"
+         href="site-1.html">
         · Проект в разработке
-      </button>
+      </a>
     </div>
 
     <button class="nav-accordion-header" onclick="toggleAccordion(this)">
@@ -413,9 +431,10 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <button class="nav-sub-item" onclick="showPage('docs-1')">
+      <a class="nav-sub-item"
+         href="docs-1.html">
         · Примеры в разработке
-      </button>
+      </a>
     </div>
   </nav>
 </aside>
@@ -429,17 +448,16 @@
       <div>
         <div class="about-intro-name">Анастасия Дубина</div>
         <div class="about-intro-role">QA Engineer · Функциональное тестирование</div>
-        </div>
+      </div>
     </div>
 
     <div class="section-title">Обо мне</div>
     <div class="card">
       <div class="card-text">
         Занимаюсь функциональным тестированием — проверяю логику, поведение интерфейса,
-        корректность данных в таблицах и статистике. Работаю без погружения в код:
-        тестирую продукт глазами пользователя, нахожу несоответствия требованиям
-        и фиксирую их понятно для команды. Люблю когда всё работает так как задумано —
-        и быстро нахожу когда это не так.
+        корректность данных в таблицах и статистике. Работаю без погружения в код: тестирую продукт глазами пользователя, нахожу несоответствия
+        требованиям и фиксирую их понятно для команды. Люблю когда всё работает
+        так как задумано — и быстро нахожу когда это не так.
       </div>
     </div>
 
@@ -490,20 +508,13 @@
       </ul>
     </div>
 
-    <div class="section-title">Хобби и интересы</div>
-    <div class="card">
-      <div class="card-text">
-        Увлекаюсь иллюстрацией и цифровым скетчингом — это помогает замечать детали
-        которые другие пропускают. Читаю нон-фикшн про психологию и продуктовый дизайн.
-        В свободное время изучаю UX и слежу за трендами в интерфейсах.
-      </div>
-    </div>
-
     <div class="divider"></div>
 
     <div style="display:flex; gap:12px; flex-wrap:wrap;">
       <a href="#" class="btn btn-gold">⬇ Скачать резюме</a>
-      <button class="btn btn-outline" onclick="showPage('contacts')">✉️ Написать мне</button>
+      <button class="btn btn-outline" onclick="showPage('contacts')">
+        ✉️ Написать мне
+      </button>
     </div>
   </div>
 
@@ -549,19 +560,6 @@
         <span class="tag">GitHub</span>
       </div>
     </div>
-
-    <div class="section-title">Что проверяю</div>
-    <div class="card">
-      <ul class="check-list">
-        <li>Логика работы интерфейса и кнопок</li>
-        <li>Полные пользовательские сценарии от начала до конца</li>
-        <li>Валидации форм и полей ввода</li>
-        <li>Корректность данных в таблицах и статистике</li>
-        <li>Поведение при граничных и негативных сценариях</li>
-        <li>Производительность через PageSpeed Insights</li>
-        <li>Соответствие продукта требованиям ТЗ</li>
-      </ul>
-    </div>
   </div>
 
   <!-- КОНТАКТЫ -->
@@ -599,126 +597,6 @@
         </span>
       </div>
     </div>
-
-    <div class="section-title">Предпочтительный способ связи</div>
-    <div class="card">
-      <div class="card-text">
-        Быстрее всего отвечаю в Telegram.
-        На письма отвечаю в течение одного рабочего дня.
-      </div>
-    </div>
-  </div>
-
-  <!-- БОТ ОТЧЁТОВ -->
-  <div class="content-block" id="page-bot-reports">
-    <div class="page-title">Telegram-бот отчётов сотрудников</div>
-    <div class="page-subtitle">Функциональное тестирование · Telegram Bot</div>
-
-    <div class="section-title">О проекте</div>
-    <div class="card">
-      <div class="card-text">
-        Telegram-бот для автоматизации сбора отчётов сотрудников о выполненных
-        работах на объектах. Интеграция с Google Drive и Google Sheets.
-        Приватный бот с ролевой моделью — сотрудник и администратор.
-      </div>
-      <div class="tags">
-        <span class="tag gold">Telegram Bot</span>
-        <span class="tag">Google Drive</span>
-        <span class="tag">Google Sheets</span>
-        <span class="tag">PostgreSQL</span>
-      </div>
-    </div>
-
-    <div class="section-title">Что тестировала</div>
-
-    <div class="card">
-      <div class="card-title">Авторизация</div>
-      <div class="card-text">
-        Вход с ролью сотрудник, администратор и незарегистрированный пользователь.
-        Корректность отображаемых кнопок и сообщений для каждой роли.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Пользовательская часть</div>
-      <div class="card-text">
-        Полный сценарий создания отчёта: выбор объекта → загрузка фото →
-        ввод описания → подтверждение → отправка. Валидации: отправка не фото,
-        превышение лимита 10 фото, отчёт без описания.
-        Кнопки «Назад» и «Заполнить заново» на каждом шаге.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Административная часть</div>
-      <div class="card-text">
-        Добавление и удаление объектов и сотрудников.
-        Проверка дублей по названию объекта и Telegram ID.
-        Корректность списков при пустых данных.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Логика Excel</div>
-      <div class="card-text">
-        Первый отчёт за день создаёт новую строку.
-        Повторный отчёт за день не создаёт новую строку,
-        а дописывается в существующую с временной меткой.
-        Накопительное поле описания — все задачи за день в одной ячейке.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Уведомления и расписание</div>
-      <div class="card-text">
-        Напоминания сотрудникам за час до конца рабочего дня.
-        Сводное уведомление администраторам по окончании дня.
-        Команда /stats — актуальный список сдавших и не сдавших отчёт.
-        Отсутствие уведомлений в воскресенье и нерабочие дни.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Еженедельный опрос</div>
-      <div class="card-text">
-        Запуск по расписанию каждую субботу в 16:30.
-        Полный сценарий прохождения трёх вопросов.
-        Подтверждение ответов, отправка, кнопка «Заполнить заново».
-      </div>
-    </div>
-
-    <div class="section-title">Что не тестировала</div>
-    <div class="card">
-      <div class="card-text">
-        Интеграцию с Google API, базу данных и серверную логику —
-        это зона ответственности разработчика.
-      </div>
-    </div>
-  </div>
-
-  <!-- ЗАГЛУШКИ -->
-  <div class="content-block" id="page-webapp-1">
-    <div class="page-title">Веб-приложения</div>
-    <div class="page-subtitle">Проекты появятся здесь совсем скоро</div>
-    <div class="card">
-      <div class="card-text">🚧 Раздел в разработке</div>
-    </div>
-  </div>
-
-  <div class="content-block" id="page-site-1">
-    <div class="page-title">Сайты</div>
-    <div class="page-subtitle">Проекты появятся здесь совсем скоро</div>
-    <div class="card">
-      <div class="card-text">🚧 Раздел в разработке</div>
-    </div>
-  </div>
-
-  <div class="content-block" id="page-docs-1">
-    <div class="page-title">Документация</div>
-    <div class="page-subtitle">Примеры появятся здесь совсем скоро</div>
-    <div class="card">
-      <div class="card-text">🚧 Раздел в разработке</div>
-    </div>
   </div>
 
 </main>
@@ -732,10 +610,11 @@
     const target = document.getElementById('page-' + id);
     if (target) target.classList.add('active');
 
-    document.querySelectorAll('.nav-item, .nav-sub-item').forEach(el.classList.remove('active')
-    );
+    document.querySelectorAll('.nav-item').forEach(el => {
+      el.classList.remove('active');
+    });
 
-    document.querySelectorAll('.nav-item, .nav-sub-item').forEach(el => {
+    document.querySelectorAll('.nav-item').forEach(el => {
       if (el.getAttribute('onclick') &&
           el.getAttribute('onclick').includes("'" + id + "'")) {
         el.classList.add('active');
