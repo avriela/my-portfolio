@@ -162,13 +162,12 @@
       overflow-y: auto;
       background: linear-gradient(160deg, #f5f0eb 0%, #ede8e0 100%);
     }
-
-    .content-block {
-      display: none;
+    display: none;
       padding: 48px 56px;
       max-width: 860px;
       animation: fadeIn 0.25s ease;
     }
+
     .content-block.active { display: block; }
 
     @keyframes fadeIn {
@@ -344,23 +343,10 @@
       border-left: 3px solid #e8c97e;
     }
 
-    .work-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #2c2825;
-      margin-bottom: 2px;
-    }
-
-    .work-company {
-      font-size: 13px;
-      color: #c4a45a;
-      margin-bottom: 4px;
-    }
-    .work-period {
-      font-size: 12px;
-      color: #b0a898;
-      margin-bottom: 14px;
-    }
+    .work-title { font-size: 15px; font-weight: 600; color: #2c2825; margin-bottom: 2px; }
+    .work-company { font-
+                   size: 13px; color: #c4a45a; margin-bottom: 4px; }
+    .work-period { font-size: 12px; color: #b0a898; margin-bottom: 14px; }
 
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
@@ -370,7 +356,6 @@
 </head>
 <body>
 
-<!-- БОКОВОЕ МЕНЮ -->
 <aside class="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-avatar">АД</div>
@@ -435,7 +420,6 @@
   </nav>
 </aside>
 
-<!-- ОСНОВНОЙ КОНТЕНТ -->
 <main class="main">
 
   <!-- О СЕБЕ -->
@@ -445,3 +429,337 @@
       <div>
         <div class="about-intro-name">Анастасия Дубина</div>
         <div class="about-intro-role">QA Engineer · Функциональное тестирование</div>
+        </div>
+    </div>
+
+    <div class="section-title">Обо мне</div>
+    <div class="card">
+      <div class="card-text">
+        Занимаюсь функциональным тестированием — проверяю логику, поведение интерфейса,
+        корректность данных в таблицах и статистике. Работаю без погружения в код:
+        тестирую продукт глазами пользователя, нахожу несоответствия требованиям
+        и фиксирую их понятно для команды. Люблю когда всё работает так как задумано —
+        и быстро нахожу когда это не так.
+      </div>
+    </div>
+
+    <div class="section-title">Коротко о себе</div>
+    <div class="card">
+      <div class="info-row">
+        <span class="info-label">Специализация</span>
+        <span class="info-value">Функциональное тестирование</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Опыт</span>
+        <span class="info-value">Коммерческие проекты, стажировки</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Образование</span>
+        <span class="info-value">Твоё образование</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Языки</span>
+        <span class="info-value">Русский — родной · Английский — Pre-Intermediate</span>
+      </div>
+    </div>
+
+    <div class="section-title">Опыт работы</div>
+
+    <div class="work-card">
+      <div class="work-title">QA Engineer</div>
+      <div class="work-company">ООО Технологии будущего</div>
+      <div class="work-period">Март 2024 — настоящее время · 1 год</div>
+      <ul class="check-list">
+        <li>Функциональное тестирование веб-приложений и Telegram-ботов</li>
+        <li>Составление чек-листов и тест-кейсов на основе ТЗ</li>
+        <li>Написание баг-репортов и работа с командой разработки</li>
+        <li>Проверка корректности данных в таблицах и отчётах</li>
+        <li>Тестирование пользовательских сценариев от начала до конца</li>
+      </ul>
+    </div>
+
+    <div class="work-card">
+      <div class="work-title">Junior QA / Стажёр</div>
+      <div class="work-company">Digital Studio Pro</div>
+      <div class="work-period">Сентябрь 2023 — Февраль 2024 · 6 месяцев</div>
+      <ul class="check-list">
+        <li>Smoke и регрессионное тестирование после каждого релиза</li>
+        <li>Тестирование форм, валидаций и пользовательских сценариев</li>
+        <li>Анализ требований и выявление несоответствий до начала разработки</li>
+        <li>Работа в Jira — создание задач, отслеживание статусов</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Хобби и интересы</div>
+    <div class="card">
+      <div class="card-text">
+        Увлекаюсь иллюстрацией и цифровым скетчингом — это помогает замечать детали
+        которые другие пропускают. Читаю нон-фикшн про психологию и продуктовый дизайн.
+        В свободное время изучаю UX и слежу за трендами в интерфейсах.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <a href="#" class="btn btn-gold">⬇ Скачать резюме</a>
+      <button class="btn btn-outline" onclick="showPage('contacts')">✉️ Написать мне</button>
+    </div>
+  </div>
+
+  <!-- НАВЫКИ -->
+  <div class="content-block" id="page-skills">
+    <div class="page-title">Навыки</div>
+    <div class="page-subtitle">Инструменты и подходы в работе</div>
+
+    <div class="section-title">Виды тестирования</div>
+    <div class="card">
+      <ul class="check-list">
+        <li>Функциональное тестирование</li>
+        <li>Регрессионное тестирование</li>
+        <li>Smoke-тестирование</li>
+        <li>Тестирование по документации и ТЗ</li>
+        <li>Тестирование удобства использования (UX)</li>
+        <li>Негативное тестирование</li>
+        <li>Тестирование граничных значений</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Тест-дизайн и документация</div>
+    <div class="card">
+      <ul class="check-list">
+        <li>Составление чек-листов</li>
+        <li>Написание тест-кейсов</li>
+        <li>Баг-репорты — чётко и по делу</li>
+        <li>Анализ требований и ТЗ перед тестированием</li>
+        <li>Работа с пользовательскими сценариями</li>
+      </ul>
+    </div>
+
+    <div class="section-title">Инструменты</div>
+    <div class="card">
+      <div class="tags">
+        <span class="tag gold">Chrome DevTools</span>
+        <span class="tag gold">PageSpeed Insights</span>
+        <span class="tag gold">Jira</span>
+        <span class="tag">Notion</span>
+        <span class="tag">Google Sheets</span>
+        <span class="tag">Figma (просмотр макетов)</span>
+        <span class="tag">Telegram Bot тестирование</span>
+        <span class="tag">GitHub</span>
+      </div>
+    </div>
+
+    <div class="section-title">Что проверяю</div>
+    <div class="card">
+      <ul class="check-list">
+        <li>Логика работы интерфейса и кнопок</li>
+        <li>Полные пользовательские сценарии от начала до конца</li>
+        <li>Валидации форм и полей ввода</li>
+        <li>Корректность данных в таблицах и статистике</li>
+        <li>Поведение при граничных и негативных сценариях</li>
+        <li>Производительность через PageSpeed Insights</li>
+        <li>Соответствие продукта требованиям ТЗ</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- КОНТАКТЫ -->
+  <div class="content-block" id="page-contacts">
+    <div class="page-title">Контакты</div>
+    <div class="page-subtitle">Открыта к новым проектам и предложениям</div>
+
+    <div class="card">
+      <div class="info-row">
+        <span class="info-label">Telegram</span>
+        <span class="info-value">
+          <a href="https://t.me/username" target="_blank"
+             style="color:#c4a45a; text-decoration:none;">@username</a>
+        </span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-value">
+          <a href="mailto:example@gmail.com"
+             style="color:#c4a45a; text-decoration:none;">example@gmail.com</a>
+        </span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">GitHub</span>
+        <span class="info-value">
+          <a href="https://github.com/Avriela" target="_blank"
+             style="color:#c4a45a; text-decoration:none;">github.com/Avriela</a>
+        </span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">LinkedIn</span>
+        <span class="info-value">
+          <a href="#" target="_blank"
+             style="color:#c4a45a; text-decoration:none;">Анастасия Дубина</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="section-title">Предпочтительный способ связи</div>
+    <div class="card">
+      <div class="card-text">
+        Быстрее всего отвечаю в Telegram.
+        На письма отвечаю в течение одного рабочего дня.
+      </div>
+    </div>
+  </div>
+
+  <!-- БОТ ОТЧЁТОВ -->
+  <div class="content-block" id="page-bot-reports">
+    <div class="page-title">Telegram-бот отчётов сотрудников</div>
+    <div class="page-subtitle">Функциональное тестирование · Telegram Bot</div>
+
+    <div class="section-title">О проекте</div>
+    <div class="card">
+      <div class="card-text">
+        Telegram-бот для автоматизации сбора отчётов сотрудников о выполненных
+        работах на объектах. Интеграция с Google Drive и Google Sheets.
+        Приватный бот с ролевой моделью — сотрудник и администратор.
+      </div>
+      <div class="tags">
+        <span class="tag gold">Telegram Bot</span>
+        <span class="tag">Google Drive</span>
+        <span class="tag">Google Sheets</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="section-title">Что тестировала</div>
+
+    <div class="card">
+      <div class="card-title">Авторизация</div>
+      <div class="card-text">
+        Вход с ролью сотрудник, администратор и незарегистрированный пользователь.
+        Корректность отображаемых кнопок и сообщений для каждой роли.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Пользовательская часть</div>
+      <div class="card-text">
+        Полный сценарий создания отчёта: выбор объекта → загрузка фото →
+        ввод описания → подтверждение → отправка. Валидации: отправка не фото,
+        превышение лимита 10 фото, отчёт без описания.
+        Кнопки «Назад» и «Заполнить заново» на каждом шаге.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Административная часть</div>
+      <div class="card-text">
+        Добавление и удаление объектов и сотрудников.
+        Проверка дублей по названию объекта и Telegram ID.
+        Корректность списков при пустых данных.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Логика Excel</div>
+      <div class="card-text">
+        Первый отчёт за день создаёт новую строку.
+        Повторный отчёт за день не создаёт новую строку,
+        а дописывается в существующую с временной меткой.
+        Накопительное поле описания — все задачи за день в одной ячейке.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Уведомления и расписание</div>
+      <div class="card-text">
+        Напоминания сотрудникам за час до конца рабочего дня.
+        Сводное уведомление администраторам по окончании дня.
+        Команда /stats — актуальный список сдавших и не сдавших отчёт.
+        Отсутствие уведомлений в воскресенье и нерабочие дни.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Еженедельный опрос</div>
+      <div class="card-text">
+        Запуск по расписанию каждую субботу в 16:30.
+        Полный сценарий прохождения трёх вопросов.
+        Подтверждение ответов, отправка, кнопка «Заполнить заново».
+      </div>
+    </div>
+
+    <div class="section-title">Что не тестировала</div>
+    <div class="card">
+      <div class="card-text">
+        Интеграцию с Google API, базу данных и серверную логику —
+        это зона ответственности разработчика.
+      </div>
+    </div>
+  </div>
+
+  <!-- ЗАГЛУШКИ -->
+  <div class="content-block" id="page-webapp-1">
+    <div class="page-title">Веб-приложения</div>
+    <div class="page-subtitle">Проекты появятся здесь совсем скоро</div>
+    <div class="card">
+      <div class="card-text">🚧 Раздел в разработке</div>
+    </div>
+  </div>
+
+  <div class="content-block" id="page-site-1">
+    <div class="page-title">Сайты</div>
+    <div class="page-subtitle">Проекты появятся здесь совсем скоро</div>
+    <div class="card">
+      <div class="card-text">🚧 Раздел в разработке</div>
+    </div>
+  </div>
+
+  <div class="content-block" id="page-docs-1">
+    <div class="page-title">Документация</div>
+    <div class="page-subtitle">Примеры появятся здесь совсем скоро</div>
+    <div class="card">
+      <div class="card-text">🚧 Раздел в разработке</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.content-block').forEach(el => {
+      el.classList.remove('active');
+    });
+
+    const target = document.getElementById('page-' + id);
+    if (target) target.classList.add('active');
+
+    document.querySelectorAll('.nav-item, .nav-sub-item').forEach(el.classList.remove('active')
+    );
+
+    document.querySelectorAll('.nav-item, .nav-sub-item').forEach(el => {
+      if (el.getAttribute('onclick') &&
+          el.getAttribute('onclick').includes("'" + id + "'")) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  function toggleAccordion(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+
+    document.querySelectorAll('.nav-accordion-body').forEach(el => {
+      el.classList.remove('open');
+    });
+    document.querySelectorAll('.nav-accordion-header').forEach(el => {
+      el.classList.remove('open');
+    });
+
+    if (!isOpen) {
+      body.classList.add('open');
+      header.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>
