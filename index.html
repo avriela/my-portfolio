@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Анастасия Дубина — QA Portfolio</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -20,7 +16,6 @@
       color: #2c2825;
     }
 
-    /* ===== БОКОВОЕ МЕНЮ ===== */
     .sidebar {
       width: 280px;
       min-width: 280px;
@@ -64,12 +59,8 @@
       margin-top: 4px;
     }
 
-    .sidebar-nav {
-      padding: 16px 0;
-      flex: 1;
-    }
+    .sidebar-nav { padding: 16px 0; flex: 1; }
 
-    /* Пункт меню */
     .nav-item {
       width: 100%;
       background: none;
@@ -86,34 +77,20 @@
       position: relative;
     }
 
-    .nav-item:hover {
-      color: #f0ece4;
-      background: #242424;
-    }
-
-    .nav-item.active {
-      color: #e8c97e;
-      background: #242424;
-    }
+    .nav-item:hover { color: #f0ece4; background: #242424; }
+    .nav-item.active { color: #e8c97e; background: #242424; }
 
     .nav-item.active::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
+      left: 0; top: 0; bottom: 0;
       width: 3px;
       background: #e8c97e;
       border-radius: 0 2px 2px 0;
     }
 
-    .nav-item .icon {
-      font-size: 15px;
-      width: 20px;
-      text-align: center;
-    }
+    .nav-item .icon { font-size: 15px; width: 20px; text-align: center; }
 
-    /* Категория в меню */
     .nav-category {
       padding: 16px 24px 6px;
       font-size: 12px;
@@ -123,7 +100,6 @@
       letter-spacing: 0.8px;
     }
 
-    /* Аккордеон */
     .nav-accordion-header {
       width: 100%;
       background: none;
@@ -139,14 +115,8 @@
       transition: all 0.2s;
     }
 
-    .nav-accordion-header:hover {
-      color: #f0ece4;
-      background: #242424;
-    }
-
-    .nav-accordion-header.open {
-      color: #f0ece4;
-    }
+    .nav-accordion-header:hover { color: #f0ece4; background: #242424; }
+    .nav-accordion-header.open { color: #f0ece4; }
 
     .nav-accordion-arrow {
       margin-left: auto;
@@ -155,18 +125,9 @@
       color: #5a5450;
     }
 
-    .nav-accordion-header.open .nav-accordion-arrow {
-      transform: rotate(180deg);
-    }
-
-    .nav-accordion-body {
-      display: none;
-      background: #161618;
-    }
-
-    .nav-accordion-body.open {
-      display: block;
-    }
+    .nav-accordion-header.open .nav-accordion-arrow { transform: rotate(180deg); }
+    .nav-accordion-body { display: none; background: #161618; }
+    .nav-accordion-body.open { display: block; }
 
     .nav-sub-item {
       width: 100%;
@@ -184,27 +145,18 @@
       position: relative;
     }
 
-    .nav-sub-item:hover {
-      color: #f0ece4;
-    }
-
-    .nav-sub-item.active {
-      color: #e8c97e;
-    }
+    .nav-sub-item:hover { color: #f0ece4; }
+    .nav-sub-item.active { color: #e8c97e; }
 
     .nav-sub-item.active::before {
       content: '';
-      position:
-        absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
       width: 3px;
       background: #e8c97e;
       border-radius: 0 2px 2px 0;
     }
 
-    /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
     .main {
       flex: 1;
       overflow-y: auto;
@@ -218,16 +170,13 @@
       animation: fadeIn 0.25s ease;
     }
 
-    .content-block.active {
-      display: block;
-    }
+    .content-block.active { display: block; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Заголовки */
     .page-title {
       font-size: 28px;
       font-weight: 700;
@@ -251,11 +200,8 @@
       margin-top: 36px;
     }
 
-    .section-title:first-of-type {
-      margin-top: 0;
-    }
+    .section-title:first-of-type { margin-top: 0; }
 
-    /* Карточки */
     .card {
       background: #ffffff;
       border-radius: 12px;
@@ -278,13 +224,7 @@
       line-height: 1.7;
     }
 
-    /* Теги */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
     .tag {
       background: #f5f0eb;
@@ -301,7 +241,6 @@
       color: #c4a45a;
     }
 
-    /* Список */
     .check-list {
       list-style: none;
       display: flex;
@@ -326,7 +265,6 @@
       flex-shrink: 0;
     }
 
-    /* Кнопка */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -341,27 +279,15 @@
       border: none;
     }
 
-    .btn-gold {
-      background: #e8c97e;
-      color: #1c1c1e;
-    }
-
-    .btn-gold:hover {
-      background: #d4b56a;
-    }
-
+    .btn-gold { background: #e8c97e; color: #1c1c1e; }
+    .btn-gold:hover { background: #d4b56a; }
     .btn-outline {
       background: transparent;
       border: 1px solid #e0d8ce;
       color: #7a7068;
     }
+    .btn-outline:hover { border-color: #e8c97e; color: #c4a45a; }
 
-    .btn-outline:hover {
-      border-color: #e8c97e;
-      color: #c4a45a;
-    }
-
-    /* Инфо строки */
     .info-row {
       display: flex;
       align-items: center;
@@ -371,76 +297,12 @@
       font-size: 13px;
     }
 
-    .info-row:last-child {
-      border-bottom: none;
-    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #9a9088; width: 140px; flex-shrink: 0; }
+    .info-value { color: #2c2825; }
 
-    .info-label {
-      color: #9a9088;
-      width: 140px;
-      flex-shrink: 0;
-    }
+    .divider { height: 1px; background: #ede8e0; margin: 28px 0; }
 
-    .info-value {
-      color: #2c2825;
-    }
-
-    /* Проект */
-    .project-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
-      border: 1px solid #ede8e0;
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 12px;
-      gap: 16px;
-    }
-
-    .project-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #2c2825;
-    }
-
-    .project-type {
-      font-size: 11px;
-      color
-      : #c4a45a;
-      background: #fdf6e3;
-      border: 1px solid #e8c97e;
-      padding: 3px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    .project-text {
-      font-size: 13px;
-      color: #7a7068;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    /* Divider */
-    .divider {
-      height: 1px;
-      background: #ede8e0;
-      margin: 28px 0;
-    }
-
-    /* About hero */
     .about-hero {
       display: flex;
       align-items: center;
@@ -462,75 +324,103 @@
       flex-shrink: 0;
     }
 
-    .about-intro-name {
-      font-size: 24px;
-      font-weight: 700;
-      color: #2c2825;
-    }
+    .about-intro-name { font-size: 24px; font-weight: 700; color: #2c2825; }
+    .about-intro-role { font-size: 14px; color: #9a9088; margin-top: 4px; }
 
-    .about-intro-role {
-      font-size: 14px;
-      color: #9a9088;
-      margin-top: 4px;
-    }
-
-    .about-intro-location {
-      font-size: 12px;
-      color: #b0a898;
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* Скроллбар */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #d4ccc4;
-      border-radius: 3px;
-    }
-    .sidebar::-webkit-scrollbar-thumb {
-      background: #2e2e30;
-    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #d4ccc4; border-radius: 3px; }
+    .sidebar::-webkit-scrollbar-thumb { background: #2e2e30; }
   </style>
 </head>
 <body>
 
-<!-- ===== БОКОВОЕ МЕНЮ ===== -->
 <aside class="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-avatar">АД</div>
-    <div class="sidebar-name">Анастасия Дубина</div>
+    <
+      div class="sidebar-name">Анастасия Дубина</div>
     <div class="sidebar-role">QA Engineer</div>
   </div>
 
   <nav class="sidebar-nav">
-
     <div class="nav-category">Главное</div>
 
     <button class="nav-item active" onclick="showPage('about')">
       <span class="icon">👤</span> О себе
     </button>
-
     <button class="nav-item" onclick="showPage('skills')">
       <span class="icon">⚡</span> Навыки
     </button>
-
     <button class="nav-item" onclick="showPage('contacts')">
       <span class="icon">✉️</span> Контакты
     </button>
 
     <div class="nav-category">Проекты</div>
 
-    <!-- Боты -->
     <button class="nav-accordion-header" onclick="toggleAccordion(this)">
       <span class="icon">🤖</span> Боты
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
       <button class="nav-sub-item" onclick="showPage('bot-reports')">
+        · Бот отчётов сотрудников
+      </button>
+    </div>
+
+    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
+      <span class="icon">🌐</span> Веб-приложения
+      <span class="nav-accordion-arrow">▼</span>
+    </button>
+    <div class="nav-accordion-body">
+      <button class="nav-sub-item" onclick="showPage('webapp-1')">
+        · Проект в разработке
+      </button>
+    </div>
+
+    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
+      <span class="icon">🖥️</span> Сайты
+      <span class="nav-accordion-arrow">▼</span>
+    </button>
+    <div class="nav-accordion-body">
+      <button class="nav-sub-item" onclick="showPage('site-1')">
+        · Проект в разработке
+      </button>
+    </div>
+
+    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
+      <span class="icon">📄</span> Документация
+      <span class="nav-accordion-arrow">▼</span>
+    </button>
+    <div class="nav-accordion-body">
+      <button class="nav-sub-item" onclick="showPage('docs-1')">
+        · Примеры в разработке
+      </button>
+    </div>
+  </nav>
+</aside>
+
+<main class="main">
+
+  <!-- О СЕБЕ -->
+  <div class="content-block active" id="page-about">
+    <div class="about-hero">
+      <div class="about-avatar">АД</div>
+      <div>
+        <div class="about-intro-name">Анастасия Дубина</div>
+        <div class="about-intro-role">QA Engineer · Функциональное тестирование</div>
+      </div>
+    </div>
+
+    <div class="section-title">Обо мне</div>
+    <div class="card">
+      <div class="card-text">
+        Занимаюсь функциональным тестированием — проверяю логику, поведение интерфейса,
+        корректность данных в таблицах и статистике. Работаю без погружения в код:
+        тестирую продукт глазами пользователя, нахожу несоответствия требованиям
+        и фиксирую их понятно для команды. Люблю когда всё работает так как задумано —
+        и быстро нахожу когда это не так.
+      </div>
+    </div>
+
+    <div class="section-title">
