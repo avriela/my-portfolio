@@ -169,7 +169,6 @@
       max-width: 860px;
       animation: fadeIn 0.25s ease;
     }
-
     .content-block.active { display: block; }
 
     @keyframes fadeIn {
@@ -215,7 +214,13 @@
       font-size: 15px;
       font-weight: 600;
       color: #2c2825;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: #b0a898;
+      margin-bottom: 12px;
     }
 
     .card-text {
@@ -281,11 +286,13 @@
 
     .btn-gold { background: #e8c97e; color: #1c1c1e; }
     .btn-gold:hover { background: #d4b56a; }
+
     .btn-outline {
       background: transparent;
       border: 1px solid #e0d8ce;
       color: #7a7068;
     }
+
     .btn-outline:hover { border-color: #e8c97e; color: #c4a45a; }
 
     .info-row {
@@ -327,6 +334,34 @@
     .about-intro-name { font-size: 24px; font-weight: 700; color: #2c2825; }
     .about-intro-role { font-size: 14px; color: #9a9088; margin-top: 4px; }
 
+    .work-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
+      border: 1px solid #ede8e0;
+      border-left: 3px solid #e8c97e;
+    }
+
+    .work-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2c2825;
+      margin-bottom: 2px;
+    }
+
+    .work-company {
+      font-size: 13px;
+      color: #c4a45a;
+      margin-bottom: 4px;
+    }
+    .work-period {
+      font-size: 12px;
+      color: #b0a898;
+      margin-bottom: 14px;
+    }
+
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #d4ccc4; border-radius: 3px; }
@@ -335,11 +370,11 @@
 </head>
 <body>
 
+<!-- БОКОВОЕ МЕНЮ -->
 <aside class="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-avatar">АД</div>
-    <
-      div class="sidebar-name">Анастасия Дубина</div>
+    <div class="sidebar-name">Анастасия Дубина</div>
     <div class="sidebar-role">QA Engineer</div>
   </div>
 
@@ -400,6 +435,7 @@
   </nav>
 </aside>
 
+<!-- ОСНОВНОЙ КОНТЕНТ -->
 <main class="main">
 
   <!-- О СЕБЕ -->
@@ -409,18 +445,3 @@
       <div>
         <div class="about-intro-name">Анастасия Дубина</div>
         <div class="about-intro-role">QA Engineer · Функциональное тестирование</div>
-      </div>
-    </div>
-
-    <div class="section-title">Обо мне</div>
-    <div class="card">
-      <div class="card-text">
-        Занимаюсь функциональным тестированием — проверяю логику, поведение интерфейса,
-        корректность данных в таблицах и статистике. Работаю без погружения в код:
-        тестирую продукт глазами пользователя, нахожу несоответствия требованиям
-        и фиксирую их понятно для команды. Люблю когда всё работает так как задумано —
-        и быстро нахожу когда это не так.
-      </div>
-    </div>
-
-    <div class="section-title">
