@@ -508,16 +508,17 @@
 
 .mobile-projects-dropdown {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: fixed;
+  top: auto;
+  left: 16px;
+  right: 16px;
   background: #1c1c1e;
   border: 1px solid #2e2e30;
   border-radius: 8px;
-  min-width: 220px;
-  z-index: 100;
+  min-width: unset;
+  z-index: 9999;
   padding: 8px 0;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 .mobile-projects-dropdown.open { display: block !important; }
@@ -985,6 +986,9 @@
 function toggleMobileProjects(event) {
   event.stopPropagation();
   const dropdown = document.getElementById('mobile-projects-dropdown');
+  const btn = event.target.closest('.mobile-projects-btn');
+  const rect = btn.getBoundingClientRect();
+  dropdown.style.top = (rect.bottom + 4) + 'px';
   dropdown.classList.toggle('open');
 }
 
