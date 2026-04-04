@@ -401,6 +401,154 @@
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #d4ccc4; border-radius: 3px; }
     .sidebar::-webkit-scrollbar-thumb { background: #2e2e30; }
+
+    /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+    @media (max-width: 768px) {
+
+      body {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+      }
+
+      .sidebar {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      .sidebar-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 20px;
+      }
+
+      .sidebar-avatar {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .sidebar-name { font-size: 15px; }
+      .sidebar-role { font-size: 12px; }
+
+      .sidebar-nav {
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        overflow-x: auto;
+        border-top: 1px solid #2e2e30;
+        scrollbar-width: none;
+      }
+
+      .sidebar-nav::-webkit-scrollbar { display: none; }
+
+      .nav-category { display: none; }
+
+      .nav-item {
+        padding: 12px 18px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-bottom: none;
+        flex-shrink: 0;
+      }
+
+      .nav-item.active::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px 2px 0 0;
+      }
+
+      /* Аккордеоны в сайдбаре — скрываем */
+      .nav-accordion-header,
+      .nav-accordion-body { display: none; }
+
+      /* Кнопка Проекты */
+      .mobile-projects-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 18px;
+        font-size: 13px;
+        color: #9a9088;
+        background: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+        position: relative;
+      }
+
+      .mobile-projects-btn:hover { color: #f0ece4; }
+
+      .mobile-projects-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #1c1c1e;
+        border: 1px solid #2e2e30;
+        border-radius: 8px;
+        min-width: 220px;
+        z-index: 100;
+        padding: 8px 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      }
+
+      .mobile-projects-dropdown.open { display: block; }
+
+      .mobile-projects-dropdown a {
+        display: block;
+        padding: 10px 18px;
+        font-size: 13px;
+        color: #9a9088;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .mobile-projects-dropdown a:hover { color: #e8c97e; }
+
+      .mobile-projects-wrapper {
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .main {
+        height: auto;
+        overflow: visible;
+      }
+
+      .content-block {
+        padding: 28px 20px 60px;
+      }
+
+      .page-title { font-size: 24px; }
+
+      .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .work-header {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -466,6 +614,16 @@
         · Примеры в разработке
       </a>
     </div>
+    <!-- Мобильная кнопка Проекты -->
+      <div class="mobile-projects-wrapper">
+        <button class="mobile-projects-btn" onclick="toggleMobileProjects(this)">
+          🗂 Проекты ▼
+        </button>
+        <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
+          <a href="bot-reports.html">🤖 Бот продажи подписок</a>
+          <!-- сюда просто добавляй новые проекты -->
+        </div>
+      </div>
   </nav>
 </aside>
 
@@ -811,6 +969,17 @@
       header.classList.add('open');
     }
   }
+   function toggleMobileProjects(btn) {
+    const dropdown = document.getElementById('mobile-projects-dropdown');
+    dropdown.classList.toggle('open');
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-projects-wrapper')) {
+      const dropdown = document.getElementById('mobile-projects-dropdown');
+      if (dropdown) dropdown.classList.remove('open');
+    }
+  });
 </script>
 
 </body>
