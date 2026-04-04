@@ -169,8 +169,8 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform:
-        translateY(0); }
+      to   { opacity: 1;
+            transform: translateY(0); }
     }
 
     .page-title {
@@ -193,7 +193,7 @@
       letter-spacing: 0.9px;
       color: #c4a45a;
       margin-bottom: 16px;
-      margin-top: 36px;
+      margin-top: 44px;
     }
 
     .section-title:first-of-type { margin-top: 0; }
@@ -202,16 +202,16 @@
       background: #ffffff;
       border-radius: 12px;
       padding: 24px 28px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
       border: 1px solid #ede8e0;
     }
 
     .card-title {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       color: #1e1b18;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .card-text {
@@ -296,16 +296,16 @@
     }
 
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #9a9088; width: 150px; flex-shrink: 0; }
+    .info-label { color: #9a9088; width: 160px; flex-shrink: 0; }
     .info-value { color: #1e1b18; }
 
-    .divider { height: 1px; background: #ede8e0; margin: 28px 0; }
+    .divider { height: 1px; background: #ede8e0; margin: 36px 0; }
 
     .about-hero {
       display: flex;
       align-items: center;
       gap: 24px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
 
     .about-avatar {
@@ -334,6 +334,13 @@
       margin-top: 4px;
     }
 
+    .about-intro-tagline {
+      font-size: 13px;
+      color: #b0a898;
+      margin-top: 6px;
+      font-style: italic;
+    }
+
     .work-card {
       background: #ffffff;
       border-radius: 12px;
@@ -344,23 +351,50 @@
       border-left: 3px solid #e8c97e;
     }
 
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
     .work-title {
       font-size: 16px;
       font-weight: 600;
       color: #1e1b18;
-      margin-bottom: 2px;
+    }
+
+    .work-period-badge {
+      font-size: 11px;
+      color: #c4a45a;
+      background: #fdf6e3;
+      border: 1px solid #e8c97e;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .work-company {
       font-size: 14px;
       color: #c4a45a;
-      margin-bottom: 4px;
+      margin-bottom: 16px;
     }
 
-    .work-period {
+    .work-achievements {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #ede8e0;
+    }
+
+    .work-achievements-title {
       font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
       color: #b0a898;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     ::-webkit-scrollbar { width: 6px; }
@@ -398,9 +432,8 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <a class="nav-sub-item"
-         href="bot-reports.html">
-        · Бот отчётов сотрудников
+      <a class="nav-sub-item" href="bot-reports.html">
+        · Бот продажи подписок
       </a>
     </div>
 
@@ -409,8 +442,7 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <a class="nav-sub-item"
-         href="webapp-1.html">
+      <a class="nav-sub-item" href="webapp-1.html">
         · Проект в разработке
       </a>
     </div>
@@ -420,8 +452,7 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <a class="nav-sub-item"
-         href="site-1.html">
+      <a class="nav-sub-item" href="site-1.html">
         · Проект в разработке
       </a>
     </div>
@@ -431,8 +462,7 @@
       <span class="nav-accordion-arrow">▼</span>
     </button>
     <div class="nav-accordion-body">
-      <a class="nav-sub-item"
-         href="docs-1.html">
+      <a class="nav-sub-item" href="docs-1.html">
         · Примеры в разработке
       </a>
     </div>
@@ -447,44 +477,123 @@
       <div class="about-avatar">АД</div>
       <div>
         <div class="about-intro-name">Анастасия Дубина</div>
-        <div class="about-intro-role">QA Engineer · Функциональное тестирование</div>
+        <div class="about-intro-role">QA Engineer · с 2019 года</div>
+        <div class="about-intro-tagline">Нахожу то что другие не замечают</div>
       </div>
     </div>
 
     <div class="section-title">Обо мне</div>
     <div class="card">
       <div class="card-text">
-        Занимаюсь функциональным тестированием — проверяю логику, поведение интерфейса,
-        корректность данных в таблицах и статистике. Работаю без погружения в код: тестирую продукт глазами пользователя, нахожу несоответствия
-        требованиям и фиксирую их понятно для команды. Люблю когда всё работает
-        так как задумано — и быстро нахожу когда это не так.
+        В тестирование пришла осознанно — откликнулась на вакансию в Яндексе,
+        прошла отбор и получила оффер. С тех пор совмещаю работу в распределённой
+        команде с проектами для digital и IT-агентств — где зачастую была единственным
+        тестировщиком и закрывала весь цикл самостоятельно.
+        <br><br>
+        За годы работы протестировала десятки продуктов: веб-сервисы, мобильные
+        приложения, Telegram-боты, скрипты, лендинги и внутренние инструменты.
+        Умею быстро вникать в незнакомый продукт, выстраивать логику проверок
+        с нуля и работать с командами любого размера.
+        <br><br>
+        Скрупулёзная, внимательная к деталям, не бросаю задачу на полпути.
+        Умею анализировать — отделять важное от второстепенного, приоритизировать
+        дефекты, делать выводы. Не стесняюсь задавать вопросы и не боюсь сказать
+        что чего-то не знаю — зато быстро разберусь.
+      </div>
+    </div>
+
+    <div class="section-title">Коротко о себе</div>
+    <div class="card">
+      <div class="info-row">
+        <span class="info-label">Специализация</span>
+        <span class="info-value">Функциональное тестирование · UI/UX · Исследовательское</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Опыт</span>
+        <span class="info-value">6+ лет в QA</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Формат работы</span>
+        <span class="info-value">Удалённо</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Языки</span>
+        <span class="info-value">Русский — родной · Белорусский — родной · Английский — базовый</span>
       </div>
     </div>
 
     <div class="section-title">Опыт работы</div>
 
     <div class="work-card">
-      <div class="work-title">QA Engineer</div>
-      <div class="work-company">ООО Технологии будущего</div>
-      <div class="work-period">Март 2024 — настоящее время · 1 год</div>
+      <div class="work-header">
+        <div class="work-title">Специалист по тестированию</div>
+        <div class="work-period-badge">2019 — 2026 · 7 лет</div>
+      </div>
+      <div class="work-company">Яндекс · Удалённо</div>
       <ul class="check-list">
-        <li>Функциональное тестирование веб-приложений и Telegram-ботов</li>
-        <li>Составление чек-листов и тест-кейсов на основе ТЗ</li>
-        <li>Написание баг-репортов и работа с командой разработки</li>
-        <li>Проверка корректности данных в таблицах и отчётах</li>
-        <li>Тестирование пользовательских сценариев от начала до конца</li>
+        <li>Функциональное и нефункциональное тестирование веб-сервисов,
+            мобильных приложений (Android / iOS) и внутренних инструментов</li>
+        <li>Участие в регрессионных циклах перед релизами —
+            проверка ключевых пользовательских сценариев</li>
+        <li>Исследовательское тестирование: выявление нестабильных,
+            пограничных и нетипичных сценариев</li>
+        <li>Тестирование UI/UX лендингов и внешних сайтов —
+            работа с DevTools и Charles</li>
+        <li>Составление баг-репортов, взаимодействие с разработкой,
+            ретест исправлений</li>
+        <li>Актуализация тест-кейсов: исправление устаревших сценариев,
+            повышение качества регрессионного покрытия</li>
+        <li>Участие в проектах по обучению и валидации ИИ-моделей</li>
+        <li>С 2024 — валидация баг-репортов коллег и фильтрация
+            нерелевантных дефектов перед передачей в разработку</li>
+      </ul>
+
+      <div class="work-achievements">
+        <div class="work-achievements-title">Достижения</div>
+        <ul class="check-list">
+          <li>500+ задокументированных дефектов ежегодно, включая критические
+              влияющие на стабильность релизов</li>
+          <li>Входила в число наиболее продуктивных специалистов команды
+              по внутренним метрикам качества и продуктивности</li>
+          <li>Участвовала в развитии тестовой базы команды —
+              актуализация и систематизация тест-кейсов</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-header">
+        <div class="work-title">QA Engineer — проектная занятость</div>
+        <div class="work-period-badge">2019 — н.в.</div>
+      </div>
+      <div class="work-company">Digital и IT-агентства · Удалённо</div>
+      <ul class="check-list">
+        <li>Функциональное тестирование Telegram-ботов, веб-приложений,
+            скриптов и лендингов</li>
+        <li>Составление тестовой документации с нуля:
+            чек-листы, тест-кейсы, баг-репорты</li>
+        <li>Участие в составлении ТЗ и пользовательских инструкций
+            для заказчиков</li>
+        <li>Прямое взаимодействие с разработчиками, менеджерами
+            и заказчиками — во многих проектах единственный тестировщик</li>
+        <li>Поддержка проект-менеджеров: помощь в координации задач
+            и коммуникации с командой</li>
       </ul>
     </div>
 
     <div class="work-card">
-      <div class="work-title">Junior QA / Стажёр</div>
-      <div class="work-company">Digital Studio Pro</div>
-      <div class="work-period">Сентябрь 2023 — Февраль 2024 · 6 месяцев</div>
+      <div class="work-header">
+        <div class="work-title">Специалист по обработке медицинских данных</div>
+        <div class="work-period-badge">2017 — 2019 · 2 года</div>
+      </div>
+      <div class="work-company">Крупный государственный медицинский центр</div>
       <ul class="check-list">
-        <li>Smoke и регрессионное тестирование после каждого релиза</li>
-        <li>Тестирование форм, валидаций и пользовательских сценариев</li>
-        <li>Анализ требований и выявление несоответствий до начала разработки</li>
-        <li>Работа в Jira — создание задач, отслеживание статусов</li>
+        <li>Работа с медицинскими информационными системами:
+            ввод, обработка и контроль корректности данных</li>
+        <li>Ведение электронной документации и работа
+            с внутренними базами данных</li>
+        <li>Здесь сформировалась привычка к точности и внимательности
+            при работе с большим объёмом информации без права на ошибку</li>
       </ul>
     </div>
 
@@ -509,8 +618,8 @@
         <li>Функциональное тестирование</li>
         <li>Регрессионное тестирование</li>
         <li>Smoke-тестирование</li>
-        <li>Тестирование по документации и ТЗ</li>
-        <li>Тестирование удобства использования (UX)</li>
+        <li>Исследовательское тестирование</li>
+        <li>Тестирование UI/UX</li>
         <li>Негативное тестирование</li>
         <li>Тестирование граничных значений</li>
       </ul>
@@ -519,11 +628,11 @@
     <div class="section-title">Тест-дизайн и документация</div>
     <div class="card">
       <ul class="check-list">
-        <li>Составление чек-листов</li>
-        <li>Написание тест-кейсов</li>
-        <li>Баг-репорты — чётко и по делу</li>
+        <li>Составление чек-листов и тест-кейсов</li>
+        <li>Написание баг-репортов — чётко и по делу</li>
         <li>Анализ требований и ТЗ перед тестированием</li>
-        <li>Работа с пользовательскими сценариями</li>
+        <li>Участие в составлении ТЗ и пользовательских инструкций</li>
+        <li>Актуализация и систематизация тестовой базы</li>
       </ul>
     </div>
 
@@ -531,12 +640,12 @@
     <div class="card">
       <div class="tags">
         <span class="tag gold">Chrome DevTools</span>
-        <span class="tag gold">PageSpeed Insights</span>
+        <span class="tag gold">Charles</span>
         <span class="tag gold">Jira</span>
         <span class="tag">Notion</span>
         <span class="tag">Google Sheets</span>
         <span class="tag">Figma (просмотр макетов)</span>
-        <span class="tag">Telegram Bot тестирование</span>
+        <span class="tag">PageSpeed Insights</span>
         <span class="tag">GitHub</span>
       </div>
     </div>
@@ -551,7 +660,8 @@
       <div class="info-row">
         <span class="info-label">Telegram</span>
         <span class="info-value">
-          <a href="https://t.me/username" target="_blank"
+          <
+            a href="https://t.me/username" target="_blank"
              style="color:#c4a45a; text-decoration:none;">@username</a>
         </span>
       </div>
