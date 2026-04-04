@@ -402,6 +402,11 @@
     ::-webkit-scrollbar-thumb { background: #d4ccc4; border-radius: 3px; }
     .sidebar::-webkit-scrollbar-thumb { background: #2e2e30; }
 
+    /* Мобильная кнопка — скрыта на десктопе */
+.mobile-projects-wrapper {
+  display: none;
+}
+
     /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
     @media (max-width: 768px) {
 
@@ -521,6 +526,7 @@
       .mobile-projects-wrapper {
         position: relative;
         flex-shrink: 0;
+        display: block;
       }
 
       .main {
