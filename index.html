@@ -558,6 +558,10 @@
 .two-col {
   grid-template-columns: 1fr;
 }
+       .check-list li strong {
+      min-width: 140px;
+      flex-shrink: 0;
+    }
     }
   </style>
 </head>
@@ -908,11 +912,10 @@
     <div class="page-subtitle">Открыта к новым проектам и предложениям</div>
 
     <div class="card">
-      <div class="info-row">
+  <div class="info-row">
         <span class="info-label">Telegram</span>
         <span class="info-value">
-          <
-            a href="https://t.me/username" target="_blank"
+          <a href="https://t.me/avriela" target="_blank"
              style="color:#c4a45a; text-decoration:none;">@avriela</a>
         </span>
       </div>
@@ -979,17 +982,18 @@
       header.classList.add('open');
     }
   }
-   function toggleMobileProjects(btn) {
-    const dropdown = document.getElementById('mobile-projects-dropdown');
-    dropdown.classList.toggle('open');
-  }
+function toggleMobileProjects(event) {
+  event.stopPropagation();
+  const dropdown = document.getElementById('mobile-projects-dropdown');
+  dropdown.classList.toggle('open');
+}
 
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.mobile-projects-wrapper')) {
-      const dropdown = document.getElementById('mobile-projects-dropdown');
-      if (dropdown) dropdown.classList.remove('open');
-    }
-  });
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.mobile-projects-wrapper')) {
+    const dropdown = document.getElementById('mobile-projects-dropdown');
+    if (dropdown) dropdown.classList.remove('open');
+  }
+});
 </script>
 
 </body>
