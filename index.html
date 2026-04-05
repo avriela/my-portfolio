@@ -533,6 +533,36 @@
 }
 
 .mobile-projects-dropdown a:hover { color: #e8c97e; }
+      .mobile-dropdown-category {
+  padding: 8px 18px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #a08845;
+}
+
+.mobile-dropdown-item {
+  display: block;
+  padding: 8px 18px 8px 28px;
+  font-size: 13px;
+  color: #9a9088;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mobile-dropdown-item:hover { color: #e8c97e; }
+
+.mobile-dropdown-wip {
+  color: #5a5450;
+  font-style: italic;
+}
+
+.mobile-dropdown-divider {
+  height: 1px;
+  background: #2e2e30;
+  margin: 6px 0;
+}
 
 .main {
   height: auto;
@@ -629,14 +659,35 @@
         · Примеры в разработке
       </a>
     </div>
-    <!-- Мобильная кнопка Проекты -->
+ <!-- Мобильная кнопка Проекты -->
       <div class="mobile-projects-wrapper">
         <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
           🗂 Проекты ▼
         </button>
         <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
-          <a href="bot-reports.html">🤖 Бот продажи подписок</a>
-          <!-- сюда просто добавляй новые проекты -->
+
+          <div class="mobile-dropdown-category">🤖 Боты</div>
+          <a href="bot-reports.html" class="mobile-dropdown-item">· Бот продажи подписок</a>
+          <!-- новые боты добавляй сюда -->
+
+          <div class="mobile-dropdown-divider"></div>
+
+          <div class="mobile-dropdown-category">🌐 Веб-приложения</div>
+          <a href="webapp-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Проект в разработке</a>
+          <!-- новые веб-приложения добавляй сюда -->
+
+          <div class="mobile-dropdown-divider"></div>
+
+          <div class="mobile-dropdown-category">🖥️ Сайты</div>
+          <a href="site-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Проект в разработке</a>
+          <!-- новые сайты добавляй сюда -->
+
+          <div class="mobile-dropdown-divider"></div>
+
+          <div class="mobile-dropdown-category">📄 Документация</div>
+          <a href="docs-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Примеры в разработке</a>
+          <!-- новую документацию добавляй сюда -->
+
         </div>
       </div>
   </nav>
