@@ -403,12 +403,13 @@
       color: #1e1b18;
     }
 
-    .project-card-arrow {
-      font-size: 18px;
-      color: #e8c97e;
-      transition: transform 0.2s;
-    }
-
+   .project-card-arrow {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e8c97e;
+  transition: transform 0.2s;
+  line-height: 1;
+}
     .project-card-link:hover .project-card-arrow {
       transform: translateX(4px);
     }
@@ -639,8 +640,8 @@
     <div class="nav-category">Главное</div>
 
     <button class="nav-item active" onclick="showPage('about')">
-      <span class="icon">👤</span> О себе
-    </button>
+  <span class="icon">👩‍💻</span> О себе
+</button>
     <button class="nav-item" onclick="showPage('skills')">
       <span class="icon">⚡</span> Навыки
     </button>
@@ -650,15 +651,15 @@
 
     <div class="nav-category">Проекты</div>
 
-    <button class="nav-item" onclick="showPage('projects')">
-      <span class="icon">🗂</span> Проекты
-    </button>
+   <button class="nav-item" onclick="showPage('projects')">
+  <span class="icon">🗃️</span> Проекты
+</button>
 
     <!-- Мобильная кнопка Проекты -->
     <div class="mobile-projects-wrapper">
       <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
-        🗂 Проекты ▼
-      </button>
+  🗃️ Проекты ▼
+</button>
       <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
         <a href="script-reports.html" class="mobile-dropdown-item">· Скрипт автоматизации сессий</a>
         <a href="bot-reports.html" class="mobile-dropdown-item">· Бот продажи подписок</a>
