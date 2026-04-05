@@ -21,18 +21,32 @@
     }
 
     /* НАЗАД */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: #9a9088;
-      text-decoration: none;
-      margin-bottom: 40px;
-      transition: color 0.2s;
-    }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #c4a45a;
+  text-decoration: none;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  border: 1px solid #e8c97e;
+  border-radius: 8px;
+  background: #fdf6e3;
+  transition: all 0.2s;
+}
 
-    .back-link:hover { color: #c4a45a; }
+.back-link:hover {
+  background: #e8c97e;
+  color: #1c1c1e;
+}
+
+.back-link::before {
+  content: '←';
+  font-size: 18px;
+  font-weight: 700;
+}
 
     /* ШАПКА */
     .project-header {
@@ -214,7 +228,7 @@
 <body>
 
 <div class="page-wrap">
-  <a href="index.html" class="back-link">← Назад к портфолио</a>
+<a href="index.html" class="back-link">Назад к портфолио</a>
 
   <!-- ШАПКА -->
   <div class="project-header">
