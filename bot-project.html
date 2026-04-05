@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telegram-бот учёта товаров — QA Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #f5f0eb 0%, #ede8e0 100%);
+      color: #2c2825;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 72px 80px;
+    }
+
+    /* НАЗАД */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #c4a45a;
+      text-decoration: none;
+      margin-bottom: 40px;
+      padding: 10px 20px;
+      border: 1px solid #e8c97e;
+      border-radius: 8px;
+      background: #fdf6e3;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+
+    .back-link:hover {
+      background: #e8c97e;
+      color: #1c1c1e;
+    }
+
+    .back-link span {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    /* ШАПКА */
+    .project-header {
+      margin-bottom: 48px;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .meta-badge {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #fdf6e3;
+      border: 1px solid #e8c97e;
+      color: #c4a45a;
+    }
+
+    .meta-badge.gray {
+      background: #f5f0eb;
+      border-color: #e0d8ce;
+      color: #8a8078;
+    }
+
+    .project-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e1b18;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .project-lead {
+      font-size: 16px;
+      color: #6a6460;
+      line-height: 1.8;
+      border-left: 3px solid #e8c97e;
+      padding-left: 20px;
+    }
+
+    /* СЕКЦИИ */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #c4a45a;
+      margin-bottom: 16px;
+    }
+
+    /* КАРТОЧКИ */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
+      border: 1px solid #ede8e0;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e1b18;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #5a5450;
+      line-height: 1.8;
+    }
+
+    .card p + p {
+      margin-top: 14px;
+    }
+
+    /* КЕЙСЫ */
+    .case-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .case-list li {
+      font-size: 15px;
+      color: #4a4440;
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .case-list li::before {
+      content: '✦';
+      color: #e8c97e;
+      font-size: 10px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .case-list li em {
+      color: #8a8078;
+      font-style: italic;
+    }
+
+    /* ИТОГ */
+    .result-card {
+      background: #1c1c1e;
+      border-radius: 12px;
+      padding: 28px 32px;
+      border-left: 3px solid #e8c97e;
+    }
+
+    .result-card p {
+      font-size: 15px;
+      color: #c8c0b8;
+      line-height: 1.8;
+    }
+
+    .result-card p + p {
+      margin-top: 12px;
+    }
+
+    .result-card strong {
+      color: #e8c97e;
+    }
+
+    /* МОБИЛКА */
+    @media (max-width: 768px) {
+      .page-wrap {
+        padding: 28px 20px 60px;
+      }
+
+      .project-title {
+        font-size: 24px;
+      }
+
+      .project-lead {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 20px 18px;
+      }
+
+      .result-card {
+        padding: 22px 20px;
+      }
+
+      .project-meta {
+        gap: 8px;
+      }
+
+      .case-list li {
+        font-size: 14px;
+      }
+
+      .card p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">
+    <span>←</span> Назад к портфолио
+  </a>
+
+  <!-- ШАПКА -->
+  <div class="project-header">
+    <div class="project-meta">
+      <span class="meta-badge">Telegram-бот</span>
+      <span class="meta-badge">Учёт и аналитика</span>
+      <span class="meta-badge">Импорт и выгрузка Excel</span>
+      <span class="meta-badge gray">Тестировщик</span>
+    </div>
+    <div class="project-title">Telegram-бот учёта товаров и продаж</div>
+    <div class="project-lead">
+      Бот для учёта закупок, складских остатков и продаж электроники
+      и комплектующих. Импорт данных из Excel, автоматические расчёты
+      себестоимости, выгрузка отчётов и уведомления при низком остатке.
+    </div>
+  </div>
+
+  <!-- О ПРОДУКТЕ -->
+  <div class="section">
+    <div class="section-label">О продукте</div>
+    <div class="card">
+      <p>
+        Бот работает в личных сообщениях с ограниченным доступом.
+        Поддерживает импорт данных из Excel с автоматическим расчётом
+        себестоимости с учётом курса закупочной валюты, учёт складских
+        остатков, фиксацию продаж двух типов и выгрузку отчётов
+        по продажам, доставке и остаткам.
+      </p>
+      <p>
+        При падении остатка товара ниже порогового значения бот отправляет
+        уведомление. Управление через инлайн-клавиатуру — четыре основных
+        раздела: номенклатура заказов, номенклатура прихода, продажи,
+        статистика.
+      </p>
+    </div>
+  </div>
+
+  <!-- МОЯ РОЛЬ -->
+  <div class="section">
+    <div class="section-label">Моя роль и задача</div>
+    <div class="card">
+      <p>
+        Тестирование шло итерациями — я находила баги, часть уходила
+        разработчику сразу в переписке, часть накапливалась
+        в структурированный репорт и передавалась пакетом.
+        После каждого фикса проводила ретест.
+      </p>
+      <p>
+        Разработчик давал пояснения — что является багом,
+        а что намеренным поведением. Это помогало не тратить время
+        на повторное тестирование того что уже считается нормой.
+      </p>
+    </div>
+  </div>
+
+  <!-- ЧТО ТЕСТИРОВАЛА -->
+  <div class="section">
+    <div class="section-label">Что тестировала и как</div>
+
+    <div class="card">
+      <div class="card-title">Основные сценарии</div>
+      <p>
+        Проверяла полный пользовательский путь по каждому разделу:
+        загрузка файла, навигация между шагами, корректность кнопок,
+        поведение при отмене сценария.
+      </p>
+      <p>
+        <em>Часть проблем всплыла уже на этом уровне — кнопки
+        не запускались, бот не отвечал, навигация работала не так
+        как описано в ТЗ.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Импорт Excel — валидация данных</div>
+      <p>Основной объём тестирования. Проверяла поведение бота
+      при различных входных данных:</p>
+      <ul class="case-list" style="margin-top: 16px;">
+        <li>корректный файл в ожидаемом формате</li>
+        <li>файл с переименованными или англоязычными столбцами</li>
+        <li>отсутствующие обязательные столбцы</li>
+        <li>пустые ячейки в обязательных полях</li>
+        <li>дробные значения там где ожидается целое</li>
+        <li>нулевые и отрицательные значения в числовых полях</li>
+        <li>дублирующиеся позиции с разными атрибутами</li>
+        <li>большой объём данных с повторяющимися позициями</li>
+      </ul>
+      <p style="margin-top: 16px;">
+        Для каждого случая смотрела что бот возвращает пользователю —
+        есть ли сообщение об ошибке, насколько оно информативно,
+        соответствует ли поведение ТЗ.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Проверка логики подсчётов</div>
+<p>
+        Брала выгрузку из бота и проверяла цифры вручную по логике
+        ТЗ — себестоимость единицы, итоговые суммы, прибыль
+        по периодам. Отдельно проверяла поведение расчётов
+        при некорректных входных данных: нулевых количествах,
+        отрицательных ценах, пустых полях.
+      </p>
+      <p>
+        <em>Смотрела не только итоговые цифры но и промежуточные —
+        проверяла как логика подсчётов отрабатывает граничные случаи
+        и отражаются ли они корректно в сообщениях бота.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Статистика и выгрузки</div>
+      <p>
+        Проверяла три типа выгрузок — продажи, ожидаемая доставка,
+        складские остатки. Сверяла состав колонок с ТЗ, корректность
+        данных, отображение временных меток.
+      </p>
+      <p>
+        <em>Воспроизводила ситуации с дублирующимися позициями
+        и смотрела как бот их обрабатывает в отчётах.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Сценарии продаж</div>
+      <p>
+        Отдельно прорабатывала сценарии по каждому источнику товара —
+        позиции со склада и прямые закупки без складского учёта.
+        Проверяла валидацию на каждом шаге, поведение опциональных
+        полей, корректность списания остатков, поведение кнопки
+        отмены в середине сценария.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- БАГИ -->
+  <div class="section">
+    <div class="section-label">Примеры найденных багов</div>
+    <div class="card">
+      <ul class="case-list">
+        <li>
+          Числовые поля принимали отрицательные и нулевые значения
+          без ошибки — <em>в том числе курс закупочной валюты и цены</em>
+        </li>
+        <li>
+          Дробные значения принимались там где по ТЗ допустимы
+          только целые
+        </li>
+        <li>
+          При некорректных данных в одних полях бот давал детализацию
+          по строкам, в других — только общее сообщение без указания
+          конкретных строк
+        </li>
+        <li>
+          Дублирующиеся позиции в выгрузке появлялись многократно
+          вместо того чтобы корректно агрегироваться
+        </li>
+        <li>
+          При загрузке двух одинаковых товаров с разной ценой бот
+          отображал их как один — <em>но брал цену из более старой
+          записи</em>
+        </li>
+        <li>
+          Временны́е метки в выгрузках отображались с расхождением
+          относительно реального времени
+        </li>
+        <li>
+          Кнопка отмены в ряде сценариев не отменяла уже введённые
+          данные  — товар сохранялся и попадал в статистику
+        </li>
+        <li>
+          Необязательные поля не давали возможности пропустить шаг —
+          кнопка пропуска не реагировала
+        </li>
+        <li>
+          Навигация "Назад" в многошаговых сценариях не работала —
+          сбросить можно было только через полную отмену
+        </li>
+        <li>
+          Файлы с переименованными или англоязычными столбцами
+          принимались без ошибок вместо того чтобы отклоняться
+        </li>
+        <li>
+          Пустые обязательные поля в одних разделах обрабатывались
+          с пояснением, в других — молча пропускались
+          <em>без сообщения об ошибке</em>
+        </li>
+        <li>
+          Раздел администратора содержал только одну кнопку
+          которая не работала
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ВЗАИМОДЕЙСТВИЕ -->
+  <div class="section">
+    <div class="section-label">Взаимодействие с разработчиком</div>
+    <div class="card">
+      <p>
+        Общение шло в переписке. Простые проблемы — кнопка
+        не работает, бот не отвечает — передавала сразу.
+        Более сложные баги оформляла структурированно: шаги
+        воспроизведения, ожидаемый результат, фактический результат,
+        скриншот или видео.
+      </p>
+      <p>
+        <em>Разработчик фиксил и давал комментарий если поведение
+        было намеренным — это помогало не тратить время на повторное
+        тестирование того что уже считается нормой.</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- РЕЗУЛЬТАТ -->
+  <div class="section">
+    <div class="section-label">Результат</div>
+    <div class="result-card">
+      <p>
+        Основные сценарии работают стабильно.
+        <strong>В процессе итерационного тестирования выявлен
+        и передан разработчику полный список проблем</strong> —
+        валидация входных данных, корректность расчётов, навигация,
+        обработка граничных случаев.
+      </p>
+      <p>
+        Критичные баги устранены, по части поведения получены
+        пояснения от разработчика.
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
