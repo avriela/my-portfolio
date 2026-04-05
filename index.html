@@ -498,9 +498,10 @@
         border-radius: 2px 2px 0 0;
       }
 
-/* Аккордеоны в сайдбаре — скрываем */
+/* Аккордеоны и десктопная кнопка проектов — скрываем */
 .nav-accordion-header,
-.nav-accordion-body { display: none; }
+.nav-accordion-body,
+.nav-item.nav-projects-desktop { display: none; }
 
 .nav-item {
   display: inline-flex;
@@ -651,7 +652,7 @@
 
     <div class="nav-category">Проекты</div>
 
-   <button class="nav-item" onclick="showPage('projects')">
+   <button class="nav-item nav-projects-desktop" onclick="showPage('projects')">
   <span class="icon">🗃️</span> Проекты
 </button>
 
