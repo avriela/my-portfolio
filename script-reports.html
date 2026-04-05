@@ -35,22 +35,20 @@
   border-radius: 8px;
   background: #fdf6e3;
   transition: all 0.2s;
+  line-height: 1;
 }
 
 .back-link:hover {
   background: #e8c97e;
   color: #1c1c1e;
 }
-
-.back-link::before {
-  content: '←';
+    .back-link span {
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  display: flex;
-  align-items: center;
+  display: inline-block;
+  transform: translateY(-1px);
 }
-
     /* ШАПКА */
     .project-header {
       margin-bottom: 48px;
@@ -231,7 +229,7 @@
 <body>
 
 <div class="page-wrap">
-<a href="index.html" class="back-link">Назад к портфолио</a>
+<a href="index.html" class="back-link"><span>←</span> Назад к портфолио</a>
 
   <!-- ШАПКА -->
   <div class="project-header">
