@@ -101,37 +101,6 @@
       letter-spacing: 0.8px;
     }
 
-    .nav-accordion-header {
-      width: 100%;
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      padding: 10px 24px;
-      font-size: 15px;
-      color: #9a9088;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.2s;
-    }
-
-    .nav-accordion-header:hover { color: #f0ece4; background: #242424; }
-    .nav-accordion-header.open { color: #f0ece4; }
-
-    .nav-accordion-arrow {
-      margin-left: auto;
-      font-size: 10px;
-      transition: transform 0.2s;
-      color: #5a5450;
-    }
-
-    .nav-accordion-header.open .nav-accordion-arrow {
-      transform: rotate(180deg);
-    }
-
-    .nav-accordion-body { display: none; background: #161618; }
-    .nav-accordion-body.open { display: block; }
 
     .nav-sub-item {
       width: 100%;
@@ -149,8 +118,6 @@
       position: relative;
       text-decoration: none;
     }
-
-    .nav-sub-item:hover { color: #f0ece4; }
 
     .main {
       flex: 1;
@@ -402,6 +369,62 @@
     ::-webkit-scrollbar-thumb { background: #d4ccc4; border-radius: 3px; }
     .sidebar::-webkit-scrollbar-thumb { background: #2e2e30; }
 
+    .project-card-link {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
+      border: 1px solid #ede8e0;
+      border-left: 3px solid #e8c97e;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 4px 16px rgba(44, 40, 37, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .project-card-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: #1e1b18;
+    }
+
+    .project-card-arrow {
+      font-size: 18px;
+      color: #e8c97e;
+      transition: transform 0.2s;
+    }
+
+    .project-card-link:hover .project-card-arrow {
+      transform: translateX(4px);
+    }
+
+    .project-card-desc {
+      font-size: 12px;
+      color: #c4a45a;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .project-card-text {
+      font-size: 14px;
+      color: #6a6460;
+      line-height: 1.7;
+    }
     /* Мобильная кнопка — скрыта на десктопе */
 .mobile-projects-wrapper {
   display: none;
@@ -589,6 +612,13 @@
 .two-col {
   grid-template-columns: 1fr;
 }
+       .project-card {
+      padding: 18px 16px;
+    }
+
+    .project-card-title {
+      font-size: 15px;
+    }
        .check-list li strong {
       min-width: 140px;
       flex-shrink: 0;
@@ -620,76 +650,21 @@
 
     <div class="nav-category">Проекты</div>
 
-    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
-      <span class="icon">🤖</span> Боты
-      <span class="nav-accordion-arrow">▼</span>
+    <button class="nav-item" onclick="showPage('projects')">
+      <span class="icon">🗂</span> Проекты
     </button>
-    <div class="nav-accordion-body">
-      <a class="nav-sub-item" href="bot-reports.html">
-        · Бот продажи подписок
-      </a>
-    </div>
 
-    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
-      <span class="icon">🌐</span> Веб-приложения
-      <span class="nav-accordion-arrow">▼</span>
-    </button>
-    <div class="nav-accordion-body">
-      <a class="nav-sub-item" href="webapp-1.html">
-        · Проект в разработке
-      </a>
-    </div>
-
-    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
-      <span class="icon">🖥️</span> Сайты
-      <span class="nav-accordion-arrow">▼</span>
-    </button>
-    <div class="nav-accordion-body">
-      <a class="nav-sub-item" href="site-1.html">
-        · Проект в разработке
-      </a>
-    </div>
-
-    <button class="nav-accordion-header" onclick="toggleAccordion(this)">
-      <span class="icon">📄</span> Документация
-      <span class="nav-accordion-arrow">▼</span>
-    </button>
-    <div class="nav-accordion-body">
-      <a class="nav-sub-item" href="docs-1.html">
-        · Примеры в разработке
-      </a>
-    </div>
- <!-- Мобильная кнопка Проекты -->
-      <div class="mobile-projects-wrapper">
-        <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
-          🗂 Проекты ▼
-        </button>
-        <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
-
-          <div class="mobile-dropdown-category">🤖 Боты</div>
-          <a href="bot-reports.html" class="mobile-dropdown-item">· Бот продажи подписок</a>
-          <!-- новые боты добавляй сюда -->
-
-          <div class="mobile-dropdown-divider"></div>
-
-          <div class="mobile-dropdown-category">🌐 Веб-приложения</div>
-          <a href="webapp-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Проект в разработке</a>
-          <!-- новые веб-приложения добавляй сюда -->
-
-          <div class="mobile-dropdown-divider"></div>
-
-          <div class="mobile-dropdown-category">🖥️ Сайты</div>
-          <a href="site-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Проект в разработке</a>
-          <!-- новые сайты добавляй сюда -->
-
-          <div class="mobile-dropdown-divider"></div>
-
-          <div class="mobile-dropdown-category">📄 Документация</div>
-          <a href="docs-1.html" class="mobile-dropdown-item mobile-dropdown-wip">· Примеры в разработке</a>
-          <!-- новую документацию добавляй сюда -->
-
-        </div>
+    <!-- Мобильная кнопка Проекты -->
+    <div class="mobile-projects-wrapper">
+      <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
+        🗂 Проекты ▼
+      </button>
+      <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
+        <a href="script-reports.html" class="mobile-dropdown-item">· Скрипт автоматизации сессий</a>
+        <a href="bot-reports.html" class="mobile-dropdown-item">· Бот продажи подписок</a>
+        <!-- новые проекты добавляй сюда -->
       </div>
+    </div>
   </nav>
 </aside>
 
@@ -994,7 +969,45 @@
       </div>
     </div>
   </div>
+<!-- ПРОЕКТЫ -->
+  <div class="content-block" id="page-projects">
+    <div class="page-title">Проекты</div>
+    <div class="page-subtitle">Реальные кейсы из практики</div>
 
+    <a href="script-reports.html" class="project-card-link">
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-card-title">Скрипт автоматизации сессий</div>
+          <div class="project-card-arrow">→</div>
+        </div>
+        <div class="project-card-desc">
+          Python-скрипт · Автоматизация · Единственный тестировщик
+        </div>
+        <div class="project-card-text">
+          Автоматизация управления сессиями аккаунтов на стриминговой
+          платформе с системой семейного доступа. Тестирование стабильности,
+          граничных сценариев, работа с логами и правки в скрипт.
+        </div>
+      </div>
+    </a>
+
+    <a href="bot-reports.html" class="project-card-link">
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-card-title">Бот продажи подписок</div>
+          <div class="project-card-arrow">→</div>
+        </div>
+        <div class="project-card-desc">
+          Telegram-бот · Функциональное тестирование
+        </div>
+        <div class="project-card-text">
+          Тестирование Telegram-бота для продажи подписок —
+          сценарии покупки, платёжная интеграция, граничные случаи.
+        </div>
+      </div>
+    </a>
+
+  </div>
 </main>
 
 <script>
