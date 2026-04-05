@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Скрипт автоматизации сессий — QA Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #f5f0eb 0%, #ede8e0 100%);
+      color: #2c2825;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 72px 80px;
+    }
+
+    /* НАЗАД */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #9a9088;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: #c4a45a; }
+
+    /* ШАПКА */
+    .project-header {
+      margin-bottom: 48px;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .meta-badge {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #fdf6e3;
+      border: 1px solid #e8c97e;
+      color: #c4a45a;
+    }
+
+    .meta-badge.gray {
+      background: #f5f0eb;
+      border-color: #e0d8ce;
+      color: #8a8078;
+    }
+
+    .project-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e1b18;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .project-lead {
+      font-size: 16px;
+      color: #6a6460;
+      line-height: 1.8;
+      border-left: 3px solid #e8c97e;
+      padding-left: 20px;
+    }
+
+    /* СЕКЦИИ */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #c4a45a;
+      margin-bottom: 16px;
+    }
+
+    /* КАРТОЧКИ */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
+      border: 1px solid #ede8e0;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e1b18;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #5a5450;
+      line-height: 1.8;
+    }
+
+    .card p + p {
+      margin-top: 14px;
+    }
+
+    /* КЕЙСЫ */
+    .case-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .case-list li {
+      font-size: 15px;
+      color: #4a4440;
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .case-list li::before {
+      content: '✦';
+      color: #e8c97e;
+      font-size: 10px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .case-list li em {
+      color: #8a8078;
+      font-style: italic;
+    }
+
+    /* ИТОГ */
+    .result-card {
+      background: #1c1c1e;
+      border-radius: 12px;
+      padding: 28px 32px;
+      border-left: 3px solid #e8c97e;
+    }
+
+    .result-card p {
+      font-size: 15px;
+      color: #c8c0b8;
+      line-height: 1.8;
+    }
+
+    .result-card p + p {
+      margin-top: 12px;
+    }
+
+    .result-card strong {
+      color: #e8c97e;
+    }
+
+    /* РАЗДЕЛИТЕЛЬ */
+    .divider {
+      height: 1px;
+      background: #e0d8ce;
+      margin: 44px 0;
+    }
+
+    /* МОБИЛКА */
+    @media (max-width: 768px) {
+      .page-wrap {
+        padding: 28px 20px 60px;
+      }
+
+      .project-title {
+        font-size: 24px;
+      }
+
+      .project-lead {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 20px 18px;
+      }
+
+      .result-card {
+        padding: 22px 20px;
+      }
+
+      .project-meta {
+        gap: 8px;
+      }
+
+      .case-list li {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+  <a href="index.html" class="back-link">← Назад к портфолио</a>
+
+  <!-- ШАПКА -->
+  <div class="project-header">
+    <div class="project-meta">
+      <span class="meta-badge">Python-скрипт</span>
+      <span class="meta-badge">Автоматизация</span>
+      <span class="meta-badge">Веб-интерфейс</span>
+      <span class="meta-badge gray">Единственный тестировщик</span>
+    </div>
+    <div class="project-title">Скрипт автоматизации сессий</div>
+    <div class="project-lead">
+      Скрипт автоматизирует управление сессиями аккаунтов на крупной
+      стриминговой платформе с системой семейного доступа и родительского
+      контроля. Раз в сутки — без участия человека, с уведомлением
+      в Telegram и подробным логом.
+    </div>
+  </div>
+
+  <!-- О ПРОДУКТЕ -->
+  <div class="section">
+    <div class="section-label">О продукте</div>
+    <div class="card">
+      <p>
+        Скрипт выполняет принудительный глобальный выход из активных сессий
+        для группы аккаунтов — с автоматическим получением кодов подтверждения
+        из почты, временным снятием родительских ограничений и обязательным
+        их восстановлением после каждого цикла.
+      </p>
+      <p>
+        По завершении отправляет краткое уведомление в Telegram — сколько
+        аккаунтов обработано, сколько ошибок — и формирует подробный лог.
+        Управление осуществляется через локальный веб-интерфейс: добавление
+        аккаунтов, ручной запуск, настройка расписания.
+      </p>
+    </div>
+  </div>
+
+  <!-- МОЯ РОЛЬ -->
+  <div class="section">
+    <div class="section-label">Моя роль и задача</div>
+    <div class="card">
+      <p>
+        Проект пришёл на тестирование в рабочем но сыром состоянии —
+        скрипт запускался, но стабильно работал не всегда. Я была
+        единственным тестировщиком и работала в плотном контакте
+        с разработчиком: обнаруживала проблему, разбиралась в её природе,
+        передавала с контекстом, проверяла правку.
+      </p>
+      <p>
+        Цикл повторялся многократно — часто в режиме реального времени,
+        пока разработчик вносил изменения.
+      </p>
+    </div>
+  </div>
+
+  <!-- ЧТО ТЕСТИРОВАЛА -->
+  <div class="section">
+    <div class="section-label">Что тестировала и как</div>
+
+    <div class="card">
+      <div class="card-title">Развёртывание и первый запуск</div>
+      <p>
+        Начала с установки окружения. Скрипт требовал Python —
+        на компьютере его не было. Установила через командную строку,
+        разобралась с зависимостями. Уже на этом этапе стало понятно
+        что установка для неподготовленного пользователя будет проблемой —
+        этот вывод потом лёг в основу инструкции.
+      </p>
+      <p>
+        <em>Позже разработчик решил вопрос на уровне сборки: всё необходимое
+        стало поставляться вместе со скриптом.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Основной сценарий</div>
+      <p>
+        Полный цикл для группы аккаунтов: вход в родительский аккаунт,
+        временное снятие ограничений, получение кода подтверждения из почты,
+        глобальный выход из сессий дочерних аккаунтов, восстановление
+        родительского контроля.
+      </p>
+      <p>
+        Каждый шаг проверялся и руками и в режиме отладки — наблюдала
+        за тем как скрипт проходит интерфейс платформы в браузере
+        в реальном времени, сверяла с ожидаемым поведением.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Критический сценарий</div>
+      <p>
+        Проверка того что родительский контроль восстанавливается всегда —
+        даже если в середине цикла что-то пошло не так. Это было
+        принципиальным требованием заказчика.
+      </p>
+      <p>
+        <em>Именно здесь обнаружилась одна из серьёзных проблем:
+        при падении на промежуточном шаге скрипт не возвращал
+        ограничения обратно.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Стабильность и обработка ошибок</div>
+      <p>Самый объёмный блок. Воспроизводила проблемные ситуации
+      намеренно — отключала сеть, прерывала выполнение на разных шагах,
+      смотрела как скрипт реагирует и что пишет в лог.</p>
+      <ul class="case-list" style="margin-top: 16px;">
+        <li>
+          Скрипт не дожидался полной загрузки страницы и падал
+          на определённых шагах — <em>особенно заметно при медленном
+          соединении</em>
+        </li>
+        <li>
+          Код подтверждения из почты приходил с задержкой —
+          скрипт не успевал его перехватить и фиксировал ошибку
+          там где её не было
+        </li>
+        <li>
+          После сбоя на одном аккаунте скрипт зависал вместо того
+          чтобы перейти к следующему
+        </li>
+        <li>
+          Родительский контроль не восстанавливался если цикл
+          прерывался в середине
+        </li>
+        <li>
+          Скрипт не находил нужные элементы интерфейса из-за разной
+          локализации аккаунтов или изменений на стороне платформы —
+          <em>кнопка была на месте но называлась иначе
+          или располагалась по-другому</em>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Логи и отчётность</div>
+      <p>
+        После каждого прогона разбирала лог: искала паттерны,
+        отделяла реальные ошибки от записей которые выглядели
+        критично но по факту не влияли на работу скрипта.
+      </p>
+      <p>
+        <em>Это было важно зафиксировать и объяснить заказчику —
+        чтобы не вызывать лишнего беспокойства при эксплуатации.</em>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Веб-интерфейс</div>
+      <p>
+        Добавление и удаление аккаунтов, ручной запуск, настройка
+        расписания, корректность отображения статусов.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ПРАВКИ В СКРИПТ -->
+  <div class="section">
+    <div class="section-label">Правки в скрипт</div>
+    <div class="card">
+      <p>
+        Часть изменений вносила по точным инструкциям разработчика.
+        Часть — после собственного анализа: смотрела что происходит
+        в отладке, гуглила, разбиралась через документацию,
+        формулировала гипотезу и обсуждала с разработчиком.
+      </p>
+      <p>
+        Некоторые решения предлагала сама — разработчик оценивал
+        и принимал или корректировал. Это было полноценное совместное
+        расследование, а не просто передача багов по цепочке.
+      </p>
+    </div>
+  </div>
+
+  <!-- ИНСТРУКЦИЯ -->
+  <div class="section">
+    <div class="section-label">Инструкция для заказчика</div>
+    <div class="card">
+      <p>
+        По итогам тестирования написала пошаговую инструкцию по установке и работе со скриптом —
+        для пользователя без технического бэкграунда. За основу взяла
+        наброски разработчика, но к тому моменту достаточно глубоко
+        разобралась в продукте чтобы описать процесс своими словами —
+        без лишних технических деталей, понятно и по делу.
+      </p>
+      <p>
+        <em>Разработчик проверил и внёс небольшие уточнения.
+        Инструкция ушла заказчику вместе со скриптом.</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- РЕЗУЛЬТАТ -->
+  <div class="section">
+    <div class="section-label">Результат</div>
+    <div class="result-card">
+      <p>
+        Скрипт стабильно заработал и был сдан заказчику вместе
+        с инструкцией — <strong>без замечаний.</strong>
+      </p>
+      <p>
+        В процессе тестирования выявлены и устранены проблемы
+        со стабильностью, обработкой граничных сценариев
+        и восстановлением состояния после ошибок.
+      </p>
+      <p>
+        Финальная сборка разворачивается без ручной настройки окружения.
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+  
