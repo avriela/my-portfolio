@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Корпоративный сайт — QA Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(160deg, #f5f0eb 0%, #ede8e0 100%);
+      color: #2c2825;
+      min-height: 100vh;
+    }
+
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 52px 72px 80px;
+    }
+
+    /* НАЗАД */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #c4a45a;
+      text-decoration: none;
+      margin-bottom: 40px;
+      padding: 10px 20px;
+      border: 1px solid #e8c97e;
+      border-radius: 8px;
+      background: #fdf6e3;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+
+    .back-link:hover {
+      background: #e8c97e;
+      color: #1c1c1e;
+    }
+
+    .back-link span {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1;
+      display: inline-block;
+      transform: translateY(-1px);
+    }
+
+    /* ШАПКА */
+    .project-header {
+      margin-bottom: 48px;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .meta-badge {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: #fdf6e3;
+      border: 1px solid #e8c97e;
+      color: #c4a45a;
+    }
+
+    .meta-badge.gray {
+      background: #f5f0eb;
+      border-color: #e0d8ce;
+      color: #8a8078;
+    }
+
+    .project-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1e1b18;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .project-lead {
+      font-size: 16px;
+      color: #6a6460;
+      line-height: 1.8;
+      border-left: 3px solid #e8c97e;
+      padding-left: 20px;
+    }
+
+    /* СЕКЦИИ */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #c4a45a;
+      margin-bottom: 16px;
+    }
+
+    /* КАРТОЧКИ */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 4px rgba(44, 40, 37, 0.07);
+      border: 1px solid #ede8e0;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e1b18;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #5a5450;
+      line-height: 1.8;
+    }
+
+    .card p + p {
+      margin-top: 14px;
+    }
+
+    /* КЕЙСЫ */
+    .case-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .case-list li {
+      font-size: 15px;
+      color: #4a4440;
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .case-list li::before {
+      content: '✦';
+      color: #e8c97e;
+      font-size: 10px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .case-list li em {
+      color: #8a8078;
+      font-style: italic;
+    }
+
+    .case-list-group {
+      margin-bottom: 24px;
+    }
+
+    .case-list-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .case-list-group-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #9a9088;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    /* ИТОГ */
+    .result-card {
+      background: #1c1c1e;
+      border-radius: 12px;
+      padding: 28px 32px;
+      border-left: 3px solid #e8c97e;
+    }
+
+    .result-card p {
+      font-size: 15px;
+      color: #c8c0b8;
+      line-height: 1.8;
+    }
+
+    .result-card p + p {
+      margin-top: 12px;
+    }
+
+    .result-card strong {
+      color: #e8c97e;
+    }
+
+    /*
+МОБИЛКА */
+    @media (max-width: 768px) {
+      .page-wrap {
+        padding: 28px 20px 60px;
+      }
+
+      .project-title {
+        font-size: 24px;
+      }
+
+      .project-lead {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 20px 18px;
+      }
+
+      .card p {
+        font-size: 14px;
+      }
+
+      .result-card {
+        padding: 22px 20px;
+      }
+
+      .project-meta {
+        gap: 8px;
+      }
+
+      .case-list li {
+        font-size: 14px;
+      }
+
+      .back-link {
+        font-size: 14px;
+        padding: 9px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a href="index.html" class="back-link">
+    <span>←</span> Назад к портфолио
+  </a>
+
+  <!-- ШАПКА -->
+  <div class="project-header">
+    <div class="project-meta">
+      <span class="meta-badge">Вёрстка</span>
+      <span class="meta-badge">UI/UX</span>
+      <span class="meta-badge">Кроссбраузерное тестирование</span>
+      <span class="meta-badge gray">Тестировщик</span>
+    </div>
+    <div class="project-title">Корпоративный сайт с тёмной и светлой темой</div>
+    <div class="project-lead">
+      Многостраничный корпоративный сайт с формами, переключением
+      тем и адаптивной вёрсткой. Дизайн в Figma, итерационная работа
+      через Git, проверка производительности через PageSpeed.
+    </div>
+  </div>
+
+  <!-- О ПРОДУКТЕ -->
+  <div class="section">
+    <div class="section-label">О продукте</div>
+    <div class="card">
+      <p>
+        Корпоративный сайт компании — несколько страниц с формами
+        авторизации и подписки на рассылку, переключением тёмной
+        и светлой темы, адаптивной вёрсткой под разные устройства.
+        Дизайн разрабатывался в Figma — комментарии по отклонениям
+        от макета оставляла прямо там в процессе вёрстки.
+      </p>
+      <p>
+        Часть итераций проходила на отдельных ветках в Git
+        до слияния в основную сборку.
+      </p>
+    </div>
+  </div>
+
+  <!-- МОЯ РОЛЬ -->
+  <div class="section">
+    <div class="section-label">Моя роль и задача</div>
+    <div class="card">
+      <p>
+        Тестировала соответствие вёрстки макету, корректность поведения
+        интерфейса на разных устройствах и в разных условиях.
+        Работала итерациями — находила отклонения, передавала
+        разработчику, после правок проводила ретест.
+      </p>
+      <p>
+        Часть проверок проводила на ветках в Git до попадания
+        в основную сборку — это позволяло закрывать правки раньше.
+      </p>
+    </div>
+  </div>
+
+  <!-- ЧТО ТЕСТИРОВАЛА -->
+  <div class="section">
+    <div class="section-label">Что тестировала и как</div>
+
+    <div class="card">
+      <div class="card-title">Соответствие макету в Figma</div>
+      <p>
+        Сверяла вёрстку с макетом — отступы, размеры шрифтов, цвета,
+        поведение элементов в разных состояниях. Проверяла
+        hover-состояния кнопок, активные и неактивные состояния полей
+        ввода, выпадающие списки. Смотрела как элементы ведут себя
+        при взаимодействии — анимации, переходы, фокус на полях.
+        Комментарии к отклонениям оставляла прямо в макете в Figma.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Адаптивность, темы и кроссбраузерность</div>
+      <p>
+        Проверяла вёрстку в эмуляторе браузера на разных типах экранов —
+        мобильные, планшеты, десктоп. Смотрела поведение при смене
+        ориентации на мобильных — портретная и альбомная.
+      </p>
+      <p>
+        Проверяла переключение между тёмной и светлой темой —
+        корректность смены цветов на всех элементах, читаемость текста,
+        контрастность. Смотрела поведение форм и кнопок в каждой
+        из тем. Кроссбраузерную проверку проводила в Chrome и Firefox.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Формы — авторизация и подписка на рассылку</div>
+      <p>
+        Проверяла валидацию полей форм — корректность сообщений
+        об ошибках, поведение при граничных значениях и некорректном вводе. Проверяла успешные сценарии — корректное заполнение
+        и отправка. Поведение кнопки отправки при повторном нажатии.
+        Автозаполнение браузером — корректно ли подставляются данные
+        и не ломается ли вёрстка.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Производительность — PageSpeed Insights</div>
+      <p>
+        Проверяла показатели производительности через PageSpeed Insights:
+      </p>
+      <p>
+        — Десктоп: 91/100 — в норме<br/>
+        — Мобильная версия: 54/100 — выявлены проблемы
+      </p>
+      <p>
+        На мобилке зафиксированы замечания по размеру изображений
+        и времени до первого отображения контента. Результаты переданы
+        разработчику с указанием конкретных проблем из отчёта.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Медленное соединение</div>
+      <p>
+        Проверяла поведение сайта при эмуляции медленного интернета
+        в инструментах разработчика. Смотрела появляются ли индикаторы
+        загрузки, не ломается ли вёрстка до полной загрузки, корректно
+        ли отображаются заглушки изображений. Проверяла поведение форм
+        при отправке на медленном соединении — есть ли обратная связь
+        для пользователя.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Мета-теги</div>
+      <p>
+        Проверяла наличие title и description на всех страницах,
+        уникальность на разных страницах. Смотрела корректность
+        ключевых слов относительно содержимого страницы.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Выпадающие списки и интерактивные элементы</div>
+      <p>
+        Проверяла открытие и закрытие выпадающих списков — по клику,
+        по клику вне области, при выборе пункта. Поведение при навигации
+        с клавиатуры. Корректность отображения выбранного пункта после
+        закрытия. Состояния кнопок — обычное, при наведении, активное,
+        заблокированное.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- БАГИ -->
+  <div class="section">
+    <div class="section-label">Примеры найденных проблем</div>
+    <div class="card">
+
+      <div class="case-list-group">
+        <div class="case-list-group-title">Адаптивность и темы</div>
+        <ul class="case-list">
+          <li>
+            На узких экранах текст в секции заголовка выходил
+            за границы блока
+          </li>
+          <li>
+            При смене ориентации на мобильных меню оставалось
+            в раскрытом состоянии
+          </li>
+          <li>
+            На планшетной ширине несколько блоков теряли отступы и склеивались
+          </li>
+          <li>
+            При переключении на тёмную тему фон одного из блоков
+            оставался белым
+          </li>
+          <li>
+            Цвет placeholder в полях ввода не менялся при смене темы —
+            <em>оставался тёмным на тёмном фоне</em>
+          </li>
+          <li>
+            Иконки в одном из разделов не имели версии для тёмной темы
+          </li>
+          <li>
+            В Firefox один из шрифтов рендерился с другим межбуквенным
+            интервалом — блок уезжал
+          </li>
+          <li>
+            На мобильных устройствах с крупным системным шрифтом
+            текст в кнопках обрезался —
+            <em>кнопка не растягивалась под увеличенный размер текста</em>
+          </li>
+        </ul>
+      </div>
+
+      <div class="case-list-group">
+        <div class="case-list-group-title">Формы</div>
+        <ul class="case-list">
+          <li>
+            Поле email принимало строки без точки в доменной части
+          </li>
+          <li>
+            Сообщение об ошибке при пустом поле появлялось только
+            после второй попытки отправки
+          </li>
+          <li>
+            Кнопка отправки не блокировалась при повторном нажатии —
+            форма отправлялась дважды
+          </li>
+          <li>
+            Пробелы в начале поля имени не обрезались и принимались
+            как корректный ввод
+          </li>
+          <li>
+            При автозаполнении браузером стили поля менялись —
+            <em>фон становился жёлтым и выбивался из темы</em>
+          </li>
+          <li>
+            После успешной отправки формы подписки страница не давала
+            никакой обратной связи — непонятно прошла ли отправка
+          </li>
+        </ul>
+      </div>
+
+      <div class="case-list-group">
+        <div class="case-list-group-title">Производительность и мета-теги</div>
+        <ul class="case-list">
+          <li>
+            На двух страницах title был идентичным
+          </li>
+          <li>
+            На мобилке PageSpeed зафиксировал низкий показатель
+            времени до первого отображения контента —
+            <em>страница долго оставалась пустой перед появлением
+            элементов</em>
+          </li>
+          <li>
+            На медленном соединении кнопка отправки формы не давала
+            обратной связи — пользователь не понимал что запрос
+            отправляется
+          </li>
+        </ul>
+      </div>
+
+      <div class="case-list-group">
+        <div class="case-list-group-title">Интерактивные элементы и контент</div>
+        <ul class="case-list">
+          <li>
+            Выпадающий список не закрывался при клике вне его области
+          </li>
+          <li>
+            При очень длинном значении в поле имени кнопка отправки
+            уезжала за границу блока
+          </li>
+          <li>
+            В футере ссылка вела на якорь которого не существовало
+            на странице — скролла не происходило
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- РЕЗУЛЬТАТ -->
+  <div class="section">
+    <div class="section-label">Результат</div>
+    <div class="result-card">
+      <p>
+        <strong>Показатель PageSpeed на мобилке после оптимизации
+        изображений вырос с 54 до 74.</strong> Критичные проблемы
+        с формами и адаптивностью устранены после ретеста.
+      </p>
+      <p>
+        Комментарии в Figma и итерационная работа через Git позволили
+        закрывать часть правок до попадания в основную сборку.
+      </p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
