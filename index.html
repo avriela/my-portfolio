@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -101,7 +102,6 @@
       letter-spacing: 0.8px;
     }
 
-
     .nav-sub-item {
       width: 100%;
       background: none;
@@ -136,8 +136,7 @@
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1;
-            transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     .page-title {
@@ -403,13 +402,14 @@
       color: #1e1b18;
     }
 
-   .project-card-arrow {
-  font-size: 26px;
-  font-weight: 700;
-  color: #e8c97e;
-  transition: transform 0.2s;
-  line-height: 1;
-}
+    .project-card-arrow {
+      font-size: 26px;
+      font-weight: 700;
+      color: #e8c97e;
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
     .project-card-link:hover .project-card-arrow {
       transform: translateX(4px);
     }
@@ -426,10 +426,10 @@
       color: #6a6460;
       line-height: 1.7;
     }
-    /* Мобильная кнопка — скрыта на десктопе */
-.mobile-projects-wrapper {
-  display: none;
-}
+
+    .mobile-projects-wrapper {
+      display: none;
+    }
 
     /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
     @media (max-width: 768px) {
@@ -495,136 +495,138 @@
         right: 0;
         width: 100%;
         height: 3px;
-        border-radius: 2px 2px 0 0;
+        border-radius: border-radius: 2px 2px 0 0;
       }
 
-/* Аккордеоны и десктопная кнопка проектов — скрываем */
-.nav-accordion-header,
-.nav-accordion-body,
-.nav-item.nav-projects-desktop { display: none; }
+      .nav-accordion-header,
+      .nav-accordion-body,
+      .nav-item.nav-projects-desktop { display: none; }
 
-.nav-item {
-  display: inline-flex;
-  width: auto;
-}
+      .nav-item {
+        display: inline-flex;
+        width: auto;
+      }
 
-.mobile-projects-wrapper {
-  position: relative;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
+      .mobile-projects-wrapper {
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+      }
 
-.mobile-projects-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 18px;
-  font-size: 13px;
-  color: #9a9088;
-  background: none;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+      .mobile-projects-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 18px;
+        font-size: 13px;
+        color: #9a9088;
+        background: none;
+        border: none;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
 
-.mobile-projects-btn:hover { color: #f0ece4; }
+      .mobile-projects-btn:hover { color: #f0ece4; }
 
-.mobile-projects-dropdown {
-  display: none;
-  position: fixed;
-  top: auto;
-  left: 16px;
-  right: 16px;
-  background: #1c1c1e;
-  border: 1px solid #2e2e30;
-  border-radius: 8px;
-  min-width: unset;
-  z-index: 9999;
-  padding: 8px 0;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-}
+      .mobile-projects-dropdown {
+        display: none;
+        position: fixed;
+        top: auto;
+        left: 16px;
+        right: 16px;
+        background: #1c1c1e;
+        border: 1px solid #2e2e30;
+        border-radius: 8px;
+        min-width: unset;
+        z-index: 9999;
+        padding: 8px 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      }
 
-.mobile-projects-dropdown.open { display: block !important; }
-      
-.mobile-projects-dropdown a {
-  display: block;
-  padding: 10px 18px;
-  font-size: 13px;
-  color: #9a9088;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+      .mobile-projects-dropdown.open { display: block !important; }
 
-.mobile-projects-dropdown a:hover { color: #e8c97e; }
+      .mobile-projects-dropdown a {
+        display: block;
+        padding: 10px 18px;
+        font-size: 13px;
+        color: #9a9088;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .mobile-projects-dropdown a:hover { color: #e8c97e; }
+
       .mobile-dropdown-category {
-  padding: 8px 18px 4px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.7px;
-  color: #a08845;
-}
+        padding: 8px 18px 4px;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        color: #a08845;
+      }
 
-.mobile-dropdown-item {
-  display: block;
-  padding: 8px 18px 8px 28px;
-  font-size: 13px;
-  color: #9a9088;
-  text-decoration: none;
-  transition: color 0.2s;
-}
+      .mobile-dropdown-item {
+        display: block;
+        padding: 8px 18px 8px 28px;
+        font-size: 13px;
+        color: #9a9088;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
 
-.mobile-dropdown-item:hover { color: #e8c97e; }
+      .mobile-dropdown-item:hover { color: #e8c97e; }
 
-.mobile-dropdown-wip {
-  color: #5a5450;
-  font-style: italic;
-}
+      .mobile-dropdown-wip {
+        color: #5a5450;
+        font-style: italic;
+      }
 
-.mobile-dropdown-divider {
-  height: 1px;
-  background: #2e2e30;
-  margin: 6px 0;
-}
+      .mobile-dropdown-divider {
+        height: 1px;
+        background: #2e2e30;
+        margin: 6px 0;
+      }
 
-.main {
-  height: auto;
-  overflow: visible;
-}
+      .main {
+        height: auto;
+        overflow: visible;
+      }
 
-.content-block {
-  padding: 28px 20px 60px;
-}
+      .content-block {
+        padding: 28px 20px 60px;
+      }
 
-.page-title { font-size: 24px; }
+      .page-title { font-size: 24px; }
 
-.about-hero {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
+      .about-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
 
-.work-header {
-  flex-direction: column;
-  gap: 8px;
-}
+      .work-header {
+        flex-direction: column;
+        gap: 8px;
+      }
 
-.two-col {
-  grid-template-columns: 1fr;
-}
-       .project-card {
-      padding: 18px 16px;
-    }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
 
-    .project-card-title {
-      font-size: 15px;
-    }
-       .check-list li strong {
-      min-width: 140px;
-      flex-shrink: 0;
-    }
+      .project-card {
+        padding: 18px 16px;
+      }
+
+      .project-card-title {
+        font-size: 15px;
+      }
+
+      .check-list li strong {
+        min-width: 140px;
+        flex-shrink: 0;
+      }
     }
   </style>
 </head>
@@ -641,10 +643,7 @@
     <div class="nav-category">Главное</div>
 
     <button class="nav-item active" onclick="showPage('about')">
-  <span class="icon">👩‍💻</span> О себе
-</button>
-    <button class="nav-item" onclick="showPage('skills')">
-      <span class="icon">⚡</span> Навыки
+      <span class="icon">👩‍💻</span> О себе
     </button>
     <button class="nav-item" onclick="showPage('contacts')">
       <span class="icon">✉️</span> Контакты
@@ -652,23 +651,22 @@
 
     <div class="nav-category">Проекты</div>
 
-   <button class="nav-item nav-projects-desktop" onclick="showPage('projects')">
-  <span class="icon">🗃️</span> Проекты
-</button>
+    <button class="nav-item nav-projects-desktop" onclick="showPage('projects')">
+      <span class="icon">🗃️</span> Проекты
+    </button>
 
-   <!-- Мобильная кнопка Проекты -->
-<div class="mobile-projects-wrapper">
-  <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
-    🗃️ Проекты ▼
-  </button>
-  <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
-    <a href="script-reports.html" class="mobile-dropdown-item">· Скрипт автоматизации сессий</a>
-    <a href="bot-project.html" class="mobile-dropdown-item">· Telegram-бот учёта товаров</a>
-    <a href="bot-reports.html" class="mobile-dropdown-item">· Сервис сетевого доступа</a>
-    <a href="ui-project.html" class="mobile-dropdown-item">· Корпоративный сайт</a>
-    <!-- новые проекты добавляй сюда -->
-  </div>
-</div>
+    <!-- Мобильная кнопка Проекты -->
+    <div class="mobile-projects-wrapper">
+      <button class="mobile-projects-btn" onclick="toggleMobileProjects(event)">
+        🗃️ Проекты ▼
+      </button>
+      <div class="mobile-projects-dropdown" id="mobile-projects-dropdown">
+        <a href="script-reports.html" class="mobile-dropdown-item">· Скрипт автоматизации сессий</a>
+        <a href="bot-project.html" class="mobile-dropdown-item">· Telegram-бот учета товаров</a>
+        <a href="bot-reports.html" class="mobile-dropdown-item">· Сервис сетевого доступа</a>
+        <a href="ui-project.html" class="mobile-dropdown-item">· Корпоративный сайт</a>
+      </div>
+    </div>
   </nav>
 </aside>
 
@@ -690,63 +688,61 @@
       <div class="card-text">
         QA Engineer с опытом ручного тестирования веб-сервисов и мобильных приложений (Android/iOS).
         <br><br>
-        Работала в распределенной команде (Яндекс) и самостоятельно вела проекты в роли единственного тестировщика в digital агентствах - чат-боты, веб-приложения, лендинги.
+        Работала в распределенной команде (Яндекс) и самостоятельно вела проекты в роли единственного тестировщика в digital агентствах — чат-боты, веб-приложения, лендинги.
         <br><br>
-        Закрываю полный цикл QA: от уточнения требований и составления тестовой документации до сдачи заказчику.
-Пишу технические задания и пользовательские инструкции.
-Есть опыт разметки и оценки данных для обучения AI-моделей.
+        Закрываю полный цикл QA: от уточнения требований и составления тестовой документации до сдачи заказчику. Пишу технические задания и пользовательские инструкции. Есть опыт разметки и оценки данных для обучения AI-моделей.
       </div>
     </div>
 
-<div class="section-title"></div>
-<div class="card">
-  <div class="info-row">
-    <span class="info-label">Формат работы</span>
-    <span class="info-value">Удаленно</span>
-  </div>
-  <div class="info-row">
-    <span class="info-label">Языки</span>
-    <span class="info-value">Русский — родной · Белорусский — родной · Английский — базовый</span>
-  </div>
-</div>
+    <div class="section-title"></div>
+    <div class="card">
+      <div class="info-row">
+        <span class="info-label">Формат работы</span>
+        <span class="info-value">Удалённо</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Языки</span>
+        <span class="info-value">Русский — родной · Белорусский — родной · Английский — базовый</span>
+      </div>
+    </div>
+
+    <div class="section-title">Навыки и инструменты</div>
+    <div class="card">
+      <div class="card-text">
+        Ручное тестирование (функциональное, регрессионное, smoke, исследовательское, UI/UX), Web, Android, iOS, Chrome DevTools, Charles Proxy, Jira, Яндекс Трекер, TMS (внутренний инструмент), Figma, SQL (базовый), разметка данных для AI.
+      </div>
+    </div>
 
     <div class="section-title">Опыт работы</div>
 
     <div class="work-card">
-  <div class="work-header">
-    <div class="work-title">QA Engineer — проектная занятость</div>
-    <div class="work-period-badge">2024 — 2026</div>
-  </div>
-  <div class="work-company">Digital и IT-агентства · Удалённо</div>
-  <ul class="check-list">
-    <li>Функциональное тестирование чат-ботов, веб-приложений, скриптов и лендингов</li>
-    <li>Работа в роли единственного тестировщика: самостоятельное формирование требований при отсутствии ТЗ, ведение тестовой документации (чек‑листы, тест‑кейсы), оформление и валидация баг‑репортов 
-</li>
-    <li>Прямое взаимодействие с разработчиками, менеджерами и заказчиками</li>
-    <li>Написание технических заданий и пользовательских инструкций</li>
-  </ul>
-</div>
+      <div class="work-header">
+        <div class="work-title">QA Engineer — проектная занятость</div>
+        <div class="work-period-badge">2024 — 2026</div>
+      </div>
+      <div class="work-company">Digital и IT-агентства · Удалённо</div>
+      <ul class="check-list">
+        <li>Функциональное тестирование чат-ботов, веб-приложений, скриптов и лендингов</li>
+        <li>Работа в роли единственного тестировщика: самостоятельное формирование требований при отсутствии ТЗ, ведение тестовой документации (чек‑листы, тест‑кейсы), оформление и валидация баг‑репортов</li>
+        <li>Прямое взаимодействие с разработчиками, менеджерами и заказчиками</li>
+        <li>Написание технических заданий и пользовательских инструкций</li>
+      </ul>
+    </div>
+
     <div class="work-card">
       <div class="work-header">
         <div class="work-title">Специалист тестирования</div>
         <div class="work-period-badge">2019 — 2026</div>
       </div>
-       <div class="work-company">Яндекс · Удалённо</div>
-      
+      <div class="work-company">Яндекс · Удалённо</div>
       <ul class="check-list">
-        <li>Ручное тестирование веб-сервисов и мобильных приложений (Android/iOS)
-</li>
+        <li>Ручное тестирование веб-сервисов и мобильных приложений (Android/iOS)</li>
         <li>Регрессионное тестирование перед релизами, smoke-тестирование</li>
-        <li>Исследовательское тестирование — выявление дефектов за пределами формальных сценариев
-</li>
-        <li>UI/UX тестирование: верстка, адаптивность, соответствие макетам
-</li>
-        <li>Работа с Chrome DevTools
-</li>
-        <li>Составление баг-репортов, актуализация тест-кейсов 
-</li>
-        <li>Участие в проектах по разметке и оценке данных для обучения AI-моделей
-</li>
+        <li>Исследовательское тестирование — выявление дефектов за пределами формальных сценариев</li>
+        <li>UI/UX тестирование: верстка, адаптивность, соответствие макетам</li>
+        <li>Работа с Chrome DevTools</li>
+        <li>Составление баг-репортов, актуализация тест-кейсов</li>
+        <li>Участие в проектах по разметке и оценке данных для обучения AI-моделей</li>
       </ul>
     </div>
 
@@ -772,140 +768,13 @@
     </div>
   </div>
 
-<!-- НАВЫКИ -->
- <div class="content-block" id="page-skills">
-  <div class="page-title">Навыки</div>
-  <div class="page-subtitle">Инструменты и подходы в работе</div>
-
-  <div class="card" style="margin-bottom: 28px;">
-    <div class="card-text">
-      За 6 лет в профессии работала с продуктами разного масштаба — от крупных веб-сервисов в распределённой команде до небольших проектов где была единственным тестировщиком.
-      <br><br>
-      В небольших проектах нет чёткого разделения на виды — я одновременно и функциональный тестировщик, и исследователь, и тот кто проверяет вёрстку, и тот кто пишет документацию.
-      Такой опыт учит видеть продукт целиком, а не только свой участок.
-      <br><br>
-    
-    </div>
-  </div>
-
-    <div class="section-title">Что умею</div>
-    <div class="card">
-      <ul class="check-list">
-        <li>Функциональное тестирование — проверка логики, сценариев, бизнес-правил</li>
-        <li>Понимаю разницу между подходами —
-регрессия, smoke, исследовательское —
-и выбираю нужный под задачу.
-Умею работать с граничными
-и негативными сценариями,
-оценивать критичность дефектов.</li>
-        <li>Исследовательское тестирование — нахожу то что не описано в требованиях</li>
-        <li>Тестирование UI/UX — вёрстка, адаптивность, соответствие макету, поведение интерфейса</li>
-        <li>Тестирование мобильных приложений Android и iOS</li>
-        <li>Работа с фермами удалённых устройств — тестирование на реальных девайсах
-            без физического доступа к ним</li>
-        <li>Базовая работа с логами — чтение, поиск ошибок, передача в разработку</li>
-        <li>Валидация баг-репортов коллег — фильтрация нерелевантных дефектов</li>
-      </ul>
-    </div>
-
-    <div class="section-title">Тест-дизайн и документация</div>
-    <div class="card">
-      <ul class="check-list">
-        <li>Тестовая документация с нуля —
-чек-листы, тест-кейсы, баг-репорты.
-Умею работать как по ТЗ так
-и без него — по продукту.</li>
-        <li>Уточнение требований до начала тестирования</li>
-        <li>Написание пользовательских инструкций для заказчиков</li>
-        <li>Актуализация и систематизация тестовой базы</li>
-      </ul>
-    </div>
-
-    <div class="section-title">Инструменты</div>
-
-    <div class="card">
-      <div class="card-title">Chrome DevTools</div>
-      <div class="card-text">
-        Elements, Network, Console — основные вкладки в ежедневной работе.
-        Эмуляция устройств для проверки адаптивности.
-        Остальные вкладки — по необходимости.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Трекеры и управление задачами</div>
-      <div class="card-text">
-        Яндекс Трекер, Trello, O!Task — 
-быстро осваиваю новые, логика у всех схожая
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Системы управления тест-кейсами</div>
-      <div class="card-text">
-        TestPalm — работала активно. 
-Понимаю принцип подобных систем, 
-быстро осваиваю аналоги.
-        <br><br>
-        Там где специализированных систем нет — 
-работаю через Google Sheets и Google Docs
-        Для небольших команд это часто удобнее и быстрее
-        чем громоздкие системы.
-      </div>
-    </div>
-
-<div class="card">
-      <div class="card-title">Дополнительные инструменты</div>
-      <ul class="check-list" style="margin-top: 12px;">
-        <li><strong>Figma</strong> — просмотр макетов, проверка соответствия вёрстки дизайну</li>
-        <li><strong>GitHub</strong> — работа с репозиториями, просмотр изменений</li>
-        <li><strong>Charles Proxy</strong> — перехват и просмотр HTTP/HTTPS трафика
-            в процессе тестирования</li>
-        <li><strong>PerfectPixel</strong> — попиксельное сравнение вёрстки с макетом</li>
-        <li><strong>PageSpeed Insights</strong> — проверка производительности страниц</li>
-      </ul>
-    </div>
-
-    <div class="section-title">Технический бэкграунд</div>
-    <div class="card">
-      <div class="card-text">
-        Проходила вводные курсы по Python и SQL — 
-простые SELECT-запросы, фильтрация, джойны 
-на уровне чтения данных. 
-В текущих проектах не применяю, 
-но понимаю о чём речь.
-      </div>
-    </div>
-
-    <div class="section-title">Обучение</div>
-
-    <div class="card">
-      <div class="card-title">RedRover School</div>
-      <div class="card-text">
-        Участвовала в нескольких потоках —
-        практика, разбор реальных кейсов, профессиональная среда.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Самостоятельно</div>
-      <div class="card-text">
-        Профильные блоги, YouTube, телеграм-сообщества QA.
-        Слежу за инструментами, обновляю
-   подходы в работе,
-        чтобы понимать куда движется профессия.
-      </div>
-    </div>
-
-  </div>
-
   <!-- КОНТАКТЫ -->
   <div class="content-block" id="page-contacts">
     <div class="page-title">Контакты</div>
     <div class="page-subtitle">Открыта к новым проектам и предложениям</div>
 
     <div class="card">
-  <div class="info-row">
+      <div class="info-row">
         <span class="info-label">Telegram</span>
         <span class="info-value">
           <a href="https://t.me/avriela" target="_blank"
@@ -915,23 +784,22 @@
       <div class="info-row">
         <span class="info-label">Email</span>
         <span class="info-value">
-          <a href="mailto: Avriela@yandex.by"
+          <a href="mailto:Avriela@yandex.by"
              style="color:#c4a45a; text-decoration:none;">Avriela@yandex.by</a>
         </span>
       </div>
       <div class="info-row">
         <span class="info-label">LinkedIn</span>
         <span class="info-value">
-         <a href="https://www.linkedin.com/in/avriela" 
-   target="_blank"
-   style="color:#c4a45a; text-decoration:none;">
-   linkedin.com/in/avriela
-</a>
+          <a href="https://www.linkedin.com/in/avriela"
+             target="_blank"
+             style="color:#c4a45a; text-decoration:none;">linkedin.com/in/avriela</a>
         </span>
       </div>
     </div>
   </div>
-<!-- ПРОЕКТЫ -->
+
+  <!-- ПРОЕКТЫ -->
   <div class="content-block" id="page-projects">
     <div class="page-title">Проекты</div>
     <div class="page-subtitle">Реальные кейсы из практики</div>
@@ -952,55 +820,59 @@
         </div>
       </div>
     </a>
-<a href="bot-project.html" class="project-card-link">
-  <div class="project-card">
-    <div class="project-card-header">
-      <div class="project-card-title">Telegram-бот учёта товаров и продаж</div>
-      <div class="project-card-arrow">→</div>
-    </div>
-    <div class="project-card-desc">
-      Telegram-бот · Учёт и аналитика · Импорт и выгрузка Excel
-    </div>
-    <div class="project-card-text">
-      Тестирование бота для учёта закупок, складских остатков
-      и продаж электроники. Валидация данных, проверка логики
-      подсчётов, итерационная работа с багами и ретест после фиксов.
-    </div>
-  </div>
-</a>
+
+    <a href="bot-project.html" class="project-card-link">
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-card-title">Telegram-бот учёта товаров и продаж</div>
+          <div class="project-card-arrow">→</div>
+        </div>
+        <div class="project-card-desc">
+          Telegram-бот · Учёт и аналитика · Импорт и выгрузка Excel
+        </div>
+        <div class="project-card-text">
+          Тестирование бота для учёта закупок, складских остатков
+          и продаж электроники. Валидация данных, проверка логики
+          подсчётов, итерационная работа с багами и ретест после фиксов.
+        </div>
+      </div>
+    </a>
+
     <a href="bot-reports.html" class="project-card-link">
-  <div class="project-card">
-    <div class="project-card-header">
-      <div class="project-card-title">Сервис сетевого доступа — бот и админ-панель</div>
-      <div class="project-card-arrow">→</div>
-    </div>
-    <div class="project-card-desc">
-      Telegram-бот · Веб-админ-панель · Платёжная интеграция
-    </div>
-    <div class="project-card-text">
-      Тестирование бота и админ-панели сервиса сетевого доступа.
-      Несколько итераций, связка бот ↔ админка, платёжная интеграция,
-      уведомления, реферальная программа.
-    </div>
-  </div>
-</a>
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-card-title">Сервис сетевого доступа — бот и админ-панель</div>
+          <div class="project-card-arrow">→</div>
+        </div>
+        <div class="project-card-desc">
+          Telegram-бот · Веб-админ-панель · Платёжная интеграция
+        </div>
+        <div class="project-card-text">
+          Тестирование бота и админ-панели сервиса сетевого доступа.
+          Несколько итераций, связка бот ↔ админка, платёжная интеграция,
+          уведомления, реферальная программа.
+        </div>
+      </div>
+    </a>
+
     <a href="ui-project.html" class="project-card-link">
-  <div class="project-card">
-    <div class="project-card-header">
-      <div class="project-card-title">Корпоративный сайт с тёмной и светлой темой</div>
-      <div class="project-card-arrow">→</div>
-    </div>
-    <div class="project-card-desc">
-      Вёрстка · UI/UX · Кроссбраузерное тестирование
-    </div>
-    <div class="project-card-text">
-      Проверка соответствия макету в Figma, адаптивность,
-      формы и валидация, производительность PageSpeed,
-      тёмная и светлая тема.
-    </div>
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-card-title">Корпоративный сайт с тёмной и светлой темой</div>
+          <div class="project-card-arrow">→</div>
+        </div>
+        <div class="project-card-desc">
+          Вёрстка · UI/UX · Кроссбраузерное тестирование
+        </div>
+        <div class="project-card-text">
+          Проверка соответствия макету в Figma, адаптивность,
+          формы и валидация, производительность PageSpeed,
+          тёмная и светлая тема.
+        </div>
+      </div>
+    </a>
   </div>
-</a>
-  </div>
+
 </main>
 
 <script>
@@ -1024,37 +896,21 @@
     });
   }
 
-  function toggleAccordion(header) {
-    const body = header.nextElementSibling;
-    const isOpen = body.classList.contains('open');
-
-    document.querySelectorAll('.nav-accordion-body').forEach(el => {
-      el.classList.remove('open');
-    });
-    document.querySelectorAll('.nav-accordion-header').forEach(el => {
-      el.classList.remove('open');
-    });
-
-    if (!isOpen) {
-      body.classList.add('open');
-      header.classList.add('open');
-    }
-  }
-function toggleMobileProjects(event) {
-  event.stopPropagation();
-  const dropdown = document.getElementById('mobile-projects-dropdown');
-  const btn = event.target.closest('.mobile-projects-btn');
-  const rect = btn.getBoundingClientRect();
-  dropdown.style.top = (rect.bottom + 4) + 'px';
-  dropdown.classList.toggle('open');
-}
-
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.mobile-projects-wrapper')) {
+  function toggleMobileProjects(event) {
+    event.stopPropagation();
     const dropdown = document.getElementById('mobile-projects-dropdown');
-    if (dropdown) dropdown.classList.remove('open');
+    const btn = event.target.closest('.mobile-projects-btn');
+    const rect = btn.getBoundingClientRect();
+    dropdown.style.top = (rect.bottom + 4) + 'px';
+    dropdown.classList.toggle('open');
   }
-});
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.mobile-projects-wrapper')) {
+      const dropdown = document.getElementById('mobile-projects-dropdown');
+      if (dropdown) dropdown.classList.remove('open');
+    }
+  });
 </script>
 
 </body>
